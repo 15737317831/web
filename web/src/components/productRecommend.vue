@@ -1,0 +1,214 @@
+<template>
+  <div>
+    <el-card class="box-card" shadow="hover">
+      <div class="clearfix">
+        <div class="title">
+          <i class="el-icon-arrow-right"></i>
+          {{label}}</div>
+      </div>
+       <div id="container">
+      <ul class="first">
+        <li>
+          <el-row >
+            <el-col :span="len-1" :offset="1" v-for="(item, index) in firstData" :key="index">
+               <div class="desc">
+                 <img :src="item.url" alt="">
+                 <div class='desctitle'> {{item.description}}</div> </div>
+            </el-col>
+          </el-row>
+        </li>
+      </ul>
+      <ul class="last">
+        <li>
+            <el-row >
+            <el-col :span="len-1" :offset="1" v-for="(item, index) in lastData" :key="index">
+               
+               <div class="desc">
+                 <img :src="item.url" alt="">
+                <div class='desctitle'> {{item.description}}</div> </div>
+            </el-col>
+            </el-row>
+        </li>
+      </ul>
+    </div>
+    </el-card>
+   
+  </div>
+</template>
+<script>
+
+export default {
+  name: "img-default-scroll",
+  components: {
+   
+  },
+  props: {
+    data: {
+      type: Array,
+      default() {
+        return [
+          {
+            url:require("@/img/content/1.jpg"),
+            description: "产品1"
+          },
+          {
+            url:require("@/img/content/2.jpg"),
+            description: "产品2"
+          },{
+            url:require("@/img/content/3.jpg"),
+            description: "产品3"
+          },{
+            url:require("@/img/content/4.jpg"),
+            description: "产品4"
+          },{
+            url:require("@/img/content/5.jpg"),
+            description: "产品5"
+          }
+        ];
+      }
+    },
+    label:{
+        type: String,
+        default(){
+          return ''
+        }
+      },
+  },
+  data() {
+    return {};
+  },
+  computed: {
+    firstData() {
+      let len = Math.floor(this.data.length / 2);
+      if (len == 0) {
+        return [];
+      }
+      return this.data.slice(0, len);
+    },
+    lastData() {
+      let len = Math.floor(this.data.length / 2);
+      if (len == 0) {
+        return [];
+      }
+      return this.data.slice(len, 2 * len);
+    },
+    len(){
+        let len =Math.floor(this.data.length/2)
+        if(len == 0){
+            return 24
+        }else{
+            return Math.floor(24/len);
+        }
+    }
+  }
+};
+</script>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+ .clearfix{
+    height: 45px;
+    line-height: 45px;
+    text-align : left;
+    background: #f9f9f9;
+    border-bottom: 1px solid #E0E0E0;
+  }
+  .title{
+    width: 170px;
+    background: #0177BF;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    padding-left: 15px;
+  }
+#container {
+  width: 100%;
+  height: 350px;
+  margin: 10px auto;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid #f9f9f9;
+  box-sizing: border-box;
+
+}
+#container img{
+  width: 100%;
+  height: 270px;
+}
+/* #container li{
+  position: relative;
+} */
+#container .desc{
+
+  font-size: 12px;
+ 
+}
+.desctitle{
+  height: 30px;
+  margin: -120px;
+}
+#container ul.first {
+  width: 100%;
+  right: -100%;
+  top: 0;
+  position: absolute;
+  animation: scollLeft 20s linear -10s infinite;
+}
+#container ul.last {
+  width: 100%;
+  right: -100%;
+  top: 0;
+  position: absolute;
+  animation: scollLeft 20s linear 0s infinite;
+}
+
+#container:hover ul {
+  animation-play-state: paused;
+}
+
+#container ul li {
+  float: left;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+@-webkit-keyframes scollLeft {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+@keyframes scollLeft {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+@-moz-keyframes scollLeft {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 100%;
+  }
+}
+
+@-o-keyframes scollLeft {
+  from {
+    right: -100%;
+  }
+  to {
+    right: 100%;
+  }
+}
+</style>
