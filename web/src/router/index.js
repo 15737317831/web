@@ -9,7 +9,10 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Index',
+      redirect: 'index',
+    },
+    {
+      path : '/index',
       component: Index
     },
     {
@@ -17,5 +20,6 @@ export default new Router({
       name: 'productInfo',
       component: ProductInfo
     }
-  ]
+  ],
+  mode:'history'
 })

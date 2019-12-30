@@ -1,11 +1,11 @@
 <template>
-    <div name='productInfo'>
+    <div name='product'>
     <el-card shadow="hover">
       <div slot="header" class="clearfix">
         <span>{{productInfo.productName}}</span>
       </div>
       <div class="info">
-        <img class="img" :src="productInfo.url" alt="">
+        <el-image class="img" :src="productInfo.url" alt="" fit="contain"></el-image>
           <p class="price">价格:<span class="red">{{productInfo.price}}</span></p>
           <el-row :gutter="20"  >
           <el-col :span="6"><span class="fontSize">产品型号: </span>{{productInfo.model}} </el-col>
@@ -24,7 +24,7 @@
 
 <script>
 export default {
-    name:'',
+    name:'productInfo',
     props: {
       productInfo:{
         type: Object,

@@ -105,7 +105,7 @@
   }
   .title {
     width: 170px;
-    background: #0177BF;
+    background: #09988B;
     color: #fff;
     font-size: 16px;
     font-weight: 600;

@@ -1,7 +1,9 @@
 <template>
   <div name='card'>
     <el-container>
-      <el-aside width="200px">Aside</el-aside>
+      <el-aside width="200px">
+        <Aside @showProductInfo='showProductInfo'></Aside>
+      </el-aside>
       <el-container>
         <el-main>
           <div style="margin-bottom: 10px">
@@ -18,18 +20,28 @@
               </div>
             </div>
             <div v-if='showList'>
-              <el-tabs type="border-card" class='tab' stretch>
-                <el-tab-pane label="畜禽">
-                  <productImg :isTitle='isTitle'></productImg>
+              <el-tabs type="border-card" class='tab' stretch v-model="activeName">
+                <el-tab-pane label="畜禽" name='1'>
+                  <transition name="el-fade-in-linear">
+                    <div v-show='activeName=="1"'>
+                      <productImg :productList='livestocklist' :loading='loading' v-show="activeName=='1'" :isTitle='isTitle' @showProductInfo='showProductInfo'></productImg>
+                    </div>
+                  </transition>
                 </el-tab-pane>
-                <el-tab-pane label="治疗药">
-                  <productImg :isTitle='isTitle'></productImg>
+                <el-tab-pane label="治疗药" name='2'>
+                  <transition name="el-fade-in-linear">
+                    <productImg v-show="activeName=='2'" :productList='curativelist' :loading='loading' :isTitle='isTitle' @showProductInfo='showProductInfo'></productImg>
+                  </transition>
                 </el-tab-pane>
-                <el-tab-pane label="肠道药">
-                  <productImg :isTitle='isTitle'></productImg>
+                <el-tab-pane label="肠道药" name='3'>
+                  <transition name="el-fade-in-linear">
+                    <productImg v-show="activeName=='3'" :productList='intestinallist' :loading='loading' :isTitle='isTitle' @showProductInfo='showProductInfo'></productImg>
+                  </transition>
                 </el-tab-pane>
-                <el-tab-pane label="保健类">
-                  <productImg :isTitle='isTitle'></productImg>
+                <el-tab-pane label="保健类" name='4'>
+                  <transition name="el-fade-in-linear">
+                    <productImg v-show="activeName=='4'" :productList='healthlist' :loading='loading' :isTitle='isTitle' @showProductInfo='showProductInfo'></productImg>
+                  </transition>
                 </el-tab-pane>
               </el-tabs>
             </div>
@@ -38,18 +50,15 @@
             </div>
           </el-card>
         </el-main>
-        <el-footer>
-          <Footer></Footer>
-        </el-footer>
       </el-container>
     </el-container>
   </div>
 </template>
 
 <script>
-import productInfo from '@/productInfo/productinfo'
-import productImg from '@/components/productImg'
-  import Footer from '@/components/footer'
+  import Aside from "@/components/aside"
+  import productInfo from '@/productInfo/productInfo'
+  import productImg from '@/components/productImg'
   export default {
     name: 'card',
     props: {
@@ -83,39 +92,137 @@ import productImg from '@/components/productImg'
           return {}
         }
       },
-      showList:{
+      showList: {
         type: Boolean,
-        default(){
+        default () {
           return true
         }
       },
-      productInfo:{
+      productInfo: {
         type: Object,
-        default(){
+        default () {
           return {}
+        }
+      },
+      activeTab: {
+        type: String,
+        default () {
+          return ''
+        }
+      },
+      productlist: {
+        type: Array,
+        default () {
+          return []
+        }
+      },
+      loading: {
+        type: Boolean,
+        default () {
+          return true
+        }
+      },
+      search: {
+        type: String,
+        default () {
+          return ''
         }
       }
     },
     data() {
       return {
-        isTitle:false
+        isTitle: false,
+        activeName: '1',
+        curativelist: [],
+        productfilter: [],
+        intestinallist: [],
+        livestocklist: [],
+        healthlist: [],
       };
     },
     components: {
-      Footer,
       productImg,
-      productInfo
+      productInfo,
+      Aside
     },
     computed: {},
     created() {},
     mounted() {
+      this.productfilter = this.getTableData()
     },
     watch: {
-      productInfo(e){
-        console.log(e);
+      productInfo(e) {},
+      activeTab(e) {
+        this.activeName = this.activeTab
+      },
+      search() {
+        let list1 = [],
+          list2 = [],
+          list3 = [],
+          list4 = []
+        this.productfilter = this.getTableData()
+        let product = this.productfilter
+        for (let i = 0; i < product.length; i++) {
+          if (product[i].series === "畜禽") {
+            list1.push(product[i])
+          } else if (product[i].series === "治疗药") {
+            list2.push(product[i])
+          } else if (product[i].series === "肠道药") {
+            list3.push(product[i])
+          } else {
+            list4.push(product[i])
+          }
+        }
+        this.livestocklist = list1
+        this.curativelist = list2
+        this.intestinallist = list3
+        this.healthlist = list4
+      },
+      productlist() {
+        let list1 = [],
+          list2 = [],
+          list3 = [],
+          list4 = []
+        console.log(this.getTableData());
+        this.productfilter = this.getTableData()
+        let product = this.productfilter
+        for (let i = 0; i < product.length; i++) {
+          if (product[i].series === "畜禽") {
+            list1.push(product[i])
+          } else if (product[i].series === "治疗药") {
+            list2.push(product[i])
+          } else if (product[i].series === "肠道药") {
+            list3.push(product[i])
+          } else {
+            list4.push(product[i])
+          }
+        }
+        this.livestocklist = list1
+        this.curativelist = list2
+        this.intestinallist = list3
+        this.healthlist = list4
       }
     },
-    methods: {},
+    methods: {
+      showProductInfo(e) {
+        this.$emit('showProductInfo', e)
+      },
+      // //检索功能 productlist.productCode
+      getTableData() {
+        let newData = [];
+        for (let i = 0; i < this.productlist.length; i++) {
+          let product = this.productlist[i];
+          if (
+            (this.search != '' && (product.productName || product.productCode).search(this.search) == -1)
+          ) {
+            continue
+          } else {
+            newData.push(product)
+          }
+        }
+        return newData
+      },
+    },
   };
 </script>
 
@@ -129,7 +236,7 @@ import productImg from '@/components/productImg'
   }
   .title {
     width: 170px;
-    background: #0177BF;
+    background: #09988B;
     color: #fff;
     font-size: 16px;
     font-weight: 600;
@@ -155,7 +262,7 @@ import productImg from '@/components/productImg'
   }
   .el-header,
   .el-footer {
-    background-color: #B3C0D1;
+    /* background-color: #B3C0D1; */
     color: #333;
     text-align: center;
     font-size: 14px;
@@ -163,13 +270,13 @@ import productImg from '@/components/productImg'
     height: 100px !important;
   }
   .el-aside {
-    background-color: #D3DCE6;
+    /* background-color: #D3DCE6; */
     color: #333;
     text-align: center;
     line-height: 200px;
   }
   .el-main {
-    background-color: #E9EEF3;
+    /* background-color: #E9EEF3; */
     color: #333;
     text-align: center;
     line-height: 160px;

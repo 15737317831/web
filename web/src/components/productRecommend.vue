@@ -12,8 +12,8 @@
           <el-row >
             <el-col :span="len-1" :offset="1" v-for="(item, index) in firstData" :key="index">
                <div class="desc">
-                 <img :src="item.url" alt="">
-                 <div class='desctitle'> {{item.description}}</div> </div>
+                 <img :src="item.url" alt=""  @click="openInfo(item)">
+                 <div class='desctitle'> {{item.productName}}</div> </div>
             </el-col>
           </el-row>
         </li>
@@ -24,8 +24,8 @@
             <el-col :span="len-1" :offset="1" v-for="(item, index) in lastData" :key="index">
                
                <div class="desc">
-                 <img :src="item.url" alt="">
-                <div class='desctitle'> {{item.description}}</div> </div>
+                 <img :src="item.url" alt=""  @click="openInfo(item)">
+                <div class='desctitle'> {{item.productName}}</div> </div>
             </el-col>
             </el-row>
         </li>
@@ -49,20 +49,70 @@ export default {
         return [
           {
             url:require("@/img/content/1.jpg"),
-            description: "产品1"
+            description: "产品1",
+            productName: '产品1',
+            band: '广畜',
+            price:'111',
+            model: 'XXX',
+            address: '郑州市金水区XX路',
+            number: 999,
+            key: '2222',
+            industry: '养殖>兽药疫苗>猪用药',
+            series: '畜禽',
+            date: '2019/12/20'
           },
           {
             url:require("@/img/content/2.jpg"),
-            description: "产品2"
+            description: "产品2",
+             productName: '产品1',
+            band: '广畜',
+            price:'111',
+            model: 'XXX',
+            address: '郑州市金水区XX路',
+            number: 999,
+            key: '2222',
+            industry: '养殖>兽药疫苗>猪用药',
+            series: '畜禽',
+            date: '2019/12/20'
           },{
             url:require("@/img/content/3.jpg"),
-            description: "产品3"
+            description: "产品3",
+             productName: '产品1',
+            band: '广畜',
+            price:'111',
+            model: 'XXX',
+            address: '郑州市金水区XX路',
+            number: 999,
+            key: '2222',
+            industry: '养殖>兽药疫苗>猪用药',
+            series: '畜禽',
+            date: '2019/12/20'
           },{
             url:require("@/img/content/4.jpg"),
-            description: "产品4"
+            description: "产品4",
+             productName: '产品1',
+            band: '广畜',
+            price:'111',
+            model: 'XXX',
+            address: '郑州市金水区XX路',
+            number: 999,
+            key: '2222',
+            industry: '养殖>兽药疫苗>猪用药',
+            series: '畜禽',
+            date: '2019/12/20'
           },{
             url:require("@/img/content/5.jpg"),
-            description: "产品5"
+            description: "产品5",
+             productName: '产品1',
+            band: '广畜',
+            price:'111',
+            model: 'XXX',
+            address: '郑州市金水区XX路',
+            number: 999,
+            key: '2222',
+            industry: '养殖>兽药疫苗>猪用药',
+            series: '畜禽',
+            date: '2019/12/20'
           }
         ];
       }
@@ -75,7 +125,17 @@ export default {
       },
   },
   data() {
-    return {};
+    return {
+      
+    };
+  },
+  mounted() {
+     
+    },
+  methods:{
+    openInfo(e){
+        this.$emit('showProductInfo',e )
+      }
   },
   computed: {
     firstData() {
@@ -118,7 +178,7 @@ export default {
   }
   .title{
     width: 170px;
-    background: #0177BF;
+    background: #09988B;
     color: #fff;
     font-size: 16px;
     font-weight: 600;

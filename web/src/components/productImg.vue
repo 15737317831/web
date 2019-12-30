@@ -6,12 +6,16 @@
           <i class="el-icon-arrow-right"></i> {{label}}
         </div>
       </div>
-      <ul class="content" >
-        <li class='item' v-for="item in imglist" >
-          <img v-if='isimg' class="img" :src="item.url" alt="">
-          <div class="text">{{item.description}}</div>
+      <ul ref='content' class="content" v-loading="loadingTab">
+        <li class='item' v-for="item in imglistData" :key='item.productName'>
+          <img v-if='isimg' class="img" :src="item.url" alt="" @click="openInfo(item)">
+          <div class="text">{{item.productName}}</div>
         </li>
       </ul>
+      <div class='page'>
+        <el-pagination background layout="prev, pager, next" @size-change="handleSizeChange" :current-page="currentPage" @current-change="handleCurrentChange" :hide-on-single-page="ishide" :page-size="pageSize" :total="tatal">
+        </el-pagination>
+      </div>
     </el-card>
   </div>
 </template>
@@ -49,72 +53,68 @@
         default () {
           return true
         }
+      },
+      loading: {
+        type: Boolean,
+        default () {
+          return true
+        }
+      },
+      productList: {
+        type: Array,
+        default () {
+          return []
+        }
+      },
+      search: {
+        type: String,
+        default () {
+          return ''
+        }
       }
     },
     data() {
       return {
-        imglist: [{
-            url: require("@/img/content/1.jpg"),
-            description: "产品1"
-          },
-          {
-            url: require("@/img/content/2.jpg"),
-            description: "产品2"
-          }, {
-            url: require("@/img/content/3.jpg"),
-            description: "产品3"
-          }, {
-            url: require("@/img/content/4.jpg"),
-            description: "产品4"
-          }, {
-            url: require("@/img/content/5.jpg"),
-            description: "产品5"
-          },
-          {
-            url: require("@/img/content/1.jpg"),
-            description: "产品1"
-          },
-          {
-            url: require("@/img/content/2.jpg"),
-            description: "产品2"
-          }, {
-            url: require("@/img/content/3.jpg"),
-            description: "产品3"
-          }, {
-            url: require("@/img/content/4.jpg"),
-            description: "产品4"
-          }, {
-            url: require("@/img/content/5.jpg"),
-            description: "产品5"
-          },
-          {
-            url: require("@/img/content/2.jpg"),
-            description: "产品2"
-          }, {
-            url: require("@/img/content/3.jpg"),
-            description: "产品3"
-          }, {
-            url: require("@/img/content/4.jpg"),
-            description: "产品4"
-          }, {
-            url: require("@/img/content/5.jpg"),
-            description: "产品5"
-          }, {
-            url: require("@/img/content/4.jpg"),
-            description: "产品4"
-          }, {
-            url: require("@/img/content/5.jpg"),
-            description: "产品5"
-          },
-        ]
+        ishide: true,
+        currentPage: 1,
+        pageSize: 20,
+        loadingTab: true,
       };
     },
     components: {},
-    computed: {},
+    computed: {
+      tatal() {
+        return this.productList.length
+      },
+     
+      imglistData() {
+        let list = []
+        list = this.productList && this.productList.slice((this.currentPage - 1) * this.pageSize, this.currentPage * this.pageSize)
+        return list
+      }
+    },
     created() {},
     mounted() {},
-    watch: {},
-    methods: {},
+    watch: {
+      productList(e) {},
+       loading(e) {
+        this.loadingTab = e
+      },
+    },
+    methods: {
+      openInfo(e) {
+        this.$emit('showProductInfo', e)
+      },
+      handleSizeChange(val) {
+      },
+      handleCurrentChange(val) {
+        this.currentPage = val
+        this.loadingTab = true
+        setTimeout(() => {
+          this.loadingTab = false
+        }, 1500)
+      },
+    },
   };
 </script>
 
@@ -128,7 +128,7 @@
   }
   .title {
     width: 170px;
-    background: #0177BF;
+    background: #09988B;
     color: #fff;
     font-size: 16px;
     font-weight: 600;
@@ -145,27 +145,30 @@
     float: left;
     width: 100%;
     height: 160px;
-
     margin-right: 8px;
   }
   .content {
+    min-height: 300px;
     display: flex;
-    flex-direction: row ;
-    flex-wrap:  wrap;
-    justify-content: space-around; 
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
     margin-left: 20px;
     padding: 10px;
   }
   .content .item {
-    margin: 10px 5px;
+    margin: 10px 12px;
     width: 22%;
     height: 200px;
     border: 1px solid #ccc;
     border-radius: 5%;
     background: #f5f7fa;
-   box-shadow: 5px 5px 5px #ccc;
+    box-shadow: 5px 5px 5px #ccc;
   }
-  .content .item:hover{
-    transform:scale(1.1,1.1)
+  .content .item:hover {
+    transform: scale(1.1, 1.1)
+  }
+  .page {
+    height: 40px;
   }
 </style>

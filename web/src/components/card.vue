@@ -8,7 +8,7 @@
       </div>
       <div class="content" v-for="item in contenttext" :key='item'>
          <img v-if='isimg' class="img" :src="imgsrc" alt="">
-        <div class="text">{{item}}</div>
+        <div class="text">{{item}}<span v-if='ismore' class='more' @click="moreinfo">更多>></span></div>
       </div>
     </el-card>
   </div>
@@ -41,6 +41,12 @@
         default(){
           return true
         }
+      },
+      ismore:{
+        type: Boolean,
+        default(){
+          return false
+        }
       }
     },
     data() {
@@ -58,6 +64,10 @@
     watch: {
     },
     methods: {
+      moreinfo(){
+        let info = 'more'
+        this.$emit('showProductInfo', info  )
+      }
     },
   };
 </script>
@@ -72,7 +82,7 @@
   }
   .title{
     width: 170px;
-    background: #0177BF;
+    background: #09988B;
     color: #fff;
     font-size: 16px;
     font-weight: 600;
@@ -81,6 +91,7 @@
   .text{
    line-height: 26px;
     text-align : left;
+    margin-top: 26px
   }
   .box-card {
     margin-top: 10px;
@@ -91,9 +102,17 @@
     width: 240px;
     height: 200px;
     border-radius: 5%;
-     margin-right: 8px;
+    margin: 8px 8px 20px 0;
   }
   .content{
     padding: 10px;
+  }
+  .more{
+    margin-left: 20px;
+    color: rgb(18, 52, 104) 
+  }
+  .more:hover{
+    color: rgb(15, 128, 156);
+    cursor: pointer;
   }
 </style>
