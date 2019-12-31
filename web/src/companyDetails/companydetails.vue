@@ -1,7 +1,7 @@
 <template>
     <div name='content'>
       <el-container>
-      <el-aside width="200px">
+      <el-aside class='aside'>
         <Aside @showProductInfo='showProductInfo'></Aside>
       </el-aside>
     <el-container>
@@ -108,5 +108,8 @@ export default {
   
   .el-container:nth-child(7) .el-aside {
     line-height: 320px;
+  }
+  .aside{
+     width:200px !important;
   }
 </style>

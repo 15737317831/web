@@ -15,20 +15,22 @@
     <el-table-column
       prop="date"
       label="日期"
-      width="180">
+      width="160">
     </el-table-column>
     <el-table-column
       prop="name"
       label="姓名"
-      width="180">
+      width="300">
     </el-table-column>
     <el-table-column
       prop="address"
-      label="地址">
+      label="地址"
+      width="160">
     </el-table-column>
     <el-table-column
       prop="info"
-      label="info">
+      label="info"
+    >
     </el-table-column>
   </el-table>
       </div>

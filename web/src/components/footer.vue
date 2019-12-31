@@ -3,11 +3,11 @@
         <p>郑州黄页网 | 郑州畜禽用药企业名录 |  产品展厅 | 最新供应 | 新闻资讯 | 产品地图 | 网站地图 | 免责声明 | 删除/修改信息| 投诉中心
   瘦瘦包多少钱   乌骨鸡苗   抓娃娃机厂家批发   无线模块厂家   LoRa模块   垃圾桶厂家   线性模组   进苏施工备案流程   进苏施工备案流程   梨树苗   VOCs在线监测   宁波厨房设备   门窗加工设备   上海到沈阳冷链物流   新加坡注册公司   排蓄水板   食用酒精   蔬菜大棚   格栅除污机   喷播机厂家   铸铁闸门厂家   红叶石楠价格   地黄种苗   交换机回收   mpp电力管   湿喷台车   兰州牛肉面加盟排行榜   防风抑尘网  
   郑州新普康药业有限公司  技术支持： 搜了网 | 登录 | 免费注册</p>   
-      </div> -->
+      </div> -->    
   <div class="footer">
     <div class="w1200">
       <div class="left fl">
-        <img class="fr" src="../images/logo.png" width="150px" height="150px" />
+        <img class="fr logimg" src="../images/logo.png"/>
       </div>
       <div class="middle fl">
         <ul>
@@ -56,7 +56,7 @@
           <p class="qq"><a href="javascript:;">腾讯微博</a></p>
         </div>
         <div class="r fr">
-          <img src="../images/erweima.png" />
+          <img class="erweima" src="../images/erweima.png" />
           <p>扫一扫二维码有惊喜</p>
         </div>
       </div>
@@ -92,25 +92,25 @@
 </script>
 
 <style scoped>
-  .footer {
+  /* .footer {
     height: 330px !important;
     font-size: 12px;
     line-height: 12px;
-  }
-  .footer /deep/ .data-v-1b41da19 {
-    height: 330px !important;
+  } */
+  /* .footer /deep/ .data-v-1b41da19 {
+    height: 150px !important;
     font-size: 12px;
     line-height: 12px !important;
-  }
+  } */
   /* 布局容器 */
-  .el-footer {
+  /* .el-footer {
     background-color: #1b434e;
     color: #9d9d9d;
     text-align: center;
-    font-size: 16px;
-    line-height: 36px;
-    height: 330px !important;
-  }
+    font-size: 12px;
+    line-height: 12px;
+    height: 150px !important;
+  } */
   .fl {
     float: left;
   }
@@ -124,50 +124,51 @@
   a:hover {
     color: #099a10;
   }
-  .w1200 {
-    margin: 0 auto;
-    width: 1200px;
-    height: auto;
-    overflow: hidden;
-  }
+  /* .w1200 {
+		margin: -44px auto;
+		width: 1000px;
+		min-width: 65px;
+		height: auto;
+		overflow: hidden;
+	}  */
   .footer {
     padding: 0;
-    background: #1b434e;
+    /* background: #1b434e; */
     color: #fff;
   }
   .footer .left {
-    width: 240px;
+    width: 120px;
     margin-right: 20px;
-    padding: 20px 0;
+    padding: 5px 0;
   }
   .footer .middle {
-    padding: 20px 0;
+    padding: 0;
   }
   .footer .middle ul li {
     float: left;
-    padding: 0 28px;
+    padding: 0 10px;
   }
   .footer .middle ul li h3 {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 600;
-    margin-bottom: 15px;
+    margin-bottom: 8px;
   }
   .footer .middle ul li p {
-    font-size: 14px;
+    font-size: 10px;
     text-align: left;
-    margin-top: 10px;
-    max-width: 165px;
+    margin-top: 8px;
+    /* max-width: 165px; */
   }
   .footer .middle ul li p.flink a {
     display: block;
     float: left;
-    margin-right: 20px;
+    margin-right: 10px;
     margin-bottom: 10px;
   }
   .footer .right {
     width: 300px;
     position: relative;
-    padding: 20px 0;
+    padding: 0;
   }
   .footer .right:after {
     content: "";
@@ -179,50 +180,58 @@
     top: 0px;
   }
   .footer .right .l h3 {
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 600;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
   }
   .footer .right .l h3.rx {
-    margin-top: 15px;
+    margin-top: 10px;
   }
   .footer .right .l p {
-    font-size: 16px;
+    font-size: 10px;
     color: #fff;
     font-weight: 600;
   }
   .footer .right .l p.weibo {
-    font-size: 12px;
+    font-size: 10px;
     font-weight: normal;
     color: #a1c6d2;
-    margin-top: 15px;
+    margin-top: 5px;
     background: url(../images/weibo.svg) no-repeat left center;
-    padding-left: 25px;
+    padding-left: 18px;
     font-family: "宋体";
-    height: 18px;
-    line-height: 18px;
+    height: 14px;
+    line-height: 14px;
   }
   .footer .right .l p.qq {
-    font-size: 12px;
+    font-size: 10px;
     font-weight: normal;
     color: #a1c6d2;
-    margin-top: 10px;
+    margin-top: 5px;
     background: url(../images/qq.svg) no-repeat left center;
     padding-left: 25px;
     font-family: "宋体";
-    height: 18px;
-    line-height: 18px;
+    height: 14px;
+    line-height: 14px;
   }
   .footer .right .r p {
     text-align: center;
-    margin-top: 5px;
+    margin-top: 3px;
   }
   .footer .copyright {
     clear: both;
     width: 100%;
-    font-size: 14px;
+    font-size: 10px;
     color: #929292;
     text-align: center;
-    padding-top: 30px;
+    padding-top: 0;
+  }
+  .erweima{
+    width: 80px;
+    height: 80px;
+  }
+  .logimg{
+    width: 80px;
+    height: 80px;
   }
 </style>

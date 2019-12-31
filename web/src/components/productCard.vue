@@ -1,7 +1,7 @@
 <template>
   <div name='card'>
     <el-container>
-      <el-aside width="200px">
+      <el-aside class="aside">
         <Aside @showProductInfo='showProductInfo'></Aside>
       </el-aside>
       <el-container>
@@ -258,7 +258,7 @@
     margin-right: 8px;
   }
   .content {
-    padding: 10px;
+    padding: 5px;
   }
   .el-header,
   .el-footer {
@@ -284,4 +284,15 @@
   .tab {
     margin-top: 10px
   }
+  .aside{
+    margin-top: 30px;
+    width: 200px !important
+  }
+  .tab /deep/.el-tabs--border-card>.el-tabs__content{
+    padding: 0!important
+  }
+  .tab /deep/.el-card{
+    margin-top: 0!important;
+
+}
 </style>

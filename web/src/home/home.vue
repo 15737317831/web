@@ -1,16 +1,11 @@
 <template>
   <div name='home'>
-    <el-carousel :interval="4000" type="card" height="350px" loop>
+    <el-carousel :interval="4000" type="card" loop>
       <el-carousel-item v-for="item in imglist" >
         <img class="img" :src='item.url' ></img>
       </el-carousel-item>
     </el-carousel>
     <Content @showProductInfo='showProductInfo' :productList='productList'></Content>
-    <el-container>
-      <el-footer>
-          <Footer></Footer>
-        </el-footer>
-    </el-container>
   </div>
 </template>
 
@@ -143,7 +138,7 @@ import  Footer from '@/components/footer'
     text-align: center;
     font-size: 16px;
     line-height: 36px;
-    height: 300px !important;
+    height: 300px;
     padding-top: 40px; 
   }
 </style>

@@ -89,6 +89,7 @@
     padding-left: 15px;
   }
   .text{
+    font-size: 12px;
    line-height: 26px;
     text-align : left;
     margin-top: 26px
@@ -96,6 +97,7 @@
   .box-card {
     margin-top: 10px;
     width: 100%;
+    margin-bottom: 10px;
   }
   .img{
     float: left;

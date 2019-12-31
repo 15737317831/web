@@ -6,6 +6,12 @@ import router from './router'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import api from '@/api/index.js'
+import './utils/flexible'
+import 'view-design/dist/styles/iview.css';
+import { Affix } from 'view-design';
+Vue.component('Affix', Affix);
+
+// import 'lib-flexible'
 Vue.prototype.$api = api
 Vue.prototype.$loading = true
 api.get('productRecommend.xlsx', null, r => {

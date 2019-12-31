@@ -22,7 +22,7 @@
 				<div class="w1200">
 					<div class="logo fl">
 						<div>
-							<img src="../images/logo.png" alt="" width="100px" height="100px" align="absbottom" />
+							<img class="logoimg" src="../images/logo.png" alt="" align="absbottom" />
 						</div>
 					</div>
 					<h1 class="fl lh">河南康普尔动物药业有限公司</h1>
@@ -45,6 +45,11 @@
 					<transition name="el-zoom-in-center">
 						<div v-show="activeName=='1'">
 							<Home @showProductInfo='showProductInfo'></Home>
+								<el-container>
+								<el-footer>
+									<Footer></Footer>
+								</el-footer>
+							</el-container>
 						</div>
 					</transition>
 				</el-tab-pane>
@@ -290,8 +295,8 @@
 	// @import '@/css/style.css';
 	// @import '@/css/mislider.css';
 	.main {
-		margin: -60px auto;
-		width: 97%;
+		margin: -10px auto;
+		width: 94%;
 	}
 	.main /deep/ .el-tabs--card>.el-tabs__header .el-tabs__item {
 		background: #1b434e;
@@ -308,18 +313,18 @@
 		background-color: #1b434e;
 		color: #9d9d9d;
 		text-align: center;
-		font-size: 16px;
-		line-height: 36px;
-		height: 300px !important;
-		padding-top: 40px;
+		font-size: 12px;
+		line-height: 12px;
+		height: 150px !important;
+		padding-top: 20px;
 	}
 	.main /deep/ .el-container .el-aside {
 		overflow: hidden !important;
 	}
 	.top_bar {
-		height: 44px;
+		height: 20px;
 		background: #f5f5f5;
-		line-height: 44px;
+		line-height: 20px;
 		color: #666;
 		padding: 0 20px 0 20px;
 		margin: -60px auto 0;
@@ -356,7 +361,7 @@
 		float: left;
 	}
 	.top {
-		height: 120px;
+		height: 90px;
 		background: url(../images/top_bg.png) center top no-repeat;
 		padding-top: 44px
 	}
@@ -364,13 +369,14 @@
 		margin-right: 0;
 	}
 	.lh {
-		line-height: 100px;
+		font-size: 24px;
+		line-height: 120px;
 	}
 	.top .search {
 		background: url(../images/search_bg.png) center center no-repeat;
 	}
 	.top .search input {
-		display: inline-block;
+		// display: inline-block;
 		border: none;
 		height: 42px;
 		width: 301px;
@@ -388,19 +394,21 @@
 		outline: none;
 	}
 	.top .tel {
-		height: 100px;
-		line-height: 100px;
-		font-size: 24px;
+		height: 60px;
+		line-height: 60px;
+		font-size: 18px;
 		color: #099a10;
-		padding-left: 60px;
+		padding-left: 30px;
 		background: url(../images/tel_icon.png) left center no-repeat;
 	}
 	.w1200 {
 		margin: -44px auto;
-		width: 1200px;
+		width: 1000px;
+		min-width: 65px;
 		height: auto;
 		overflow: hidden;
-	} //banner
+	} 
+	//banner
 	.banner {
 		width: 100%;
 		height: 300px;
@@ -437,5 +445,9 @@
 		text-transform: uppercase;
 		text-align: center;
 		padding-top: 25px;
+	}
+	.logoimg{
+		width: 80px;
+		height: 80px;
 	}
 </style>

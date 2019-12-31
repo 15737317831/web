@@ -136,16 +136,18 @@
   }
   .text {
     line-height: 26px;
+    font-size: 12px;
   }
   .box-card {
-    margin-top: 10px;
+    margin-bottom: 10px;
     width: 100%;
   }
   .img {
     float: left;
-    width: 100%;
-    height: 160px;
-    margin-right: 8px;
+    width: 169px;
+    height: 140px;
+    margin-right: 10px;
+    border-radius: 5px
   }
   .content {
     min-height: 300px;
@@ -153,15 +155,15 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin-left: 20px;
-    padding: 10px;
+    margin-left: 5px;
+    padding: 0px !important;
   }
   .content .item {
-    margin: 10px 12px;
-    width: 22%;
-    height: 200px;
+    margin: 15px 14px;
+    width: 170px;
+    height: 180px;
     border: 1px solid #ccc;
-    border-radius: 5%;
+    border-radius: 5px;
     background: #f5f7fa;
     box-shadow: 5px 5px 5px #ccc;
   }
@@ -171,4 +173,5 @@
   .page {
     height: 40px;
   }
+ 
 </style>

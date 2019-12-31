@@ -1,4 +1,5 @@
 <template>
+ <Affix :offset-top="50">
   <div name='aside' class="aside">
     <el-card class="box-card" shadow="hover">
       <div class="clearfix">
@@ -106,6 +107,7 @@
       </div>
     </el-card>
     </div>
+     </Affix>
 </template>
 
 <script>
@@ -147,7 +149,7 @@
 
 <style scoped lang="less">
   .text {
-    font-size: 14px;
+    font-size: 12px;
   }
   .item {
     margin-bottom: 18px;
@@ -168,6 +170,7 @@
     background: #09988B;
     color: #fff;
     overflow: hidden;
+    font-size: 16px;
     height: 32px;
     line-height: 32px
   }
@@ -179,7 +182,7 @@
     margin-top: 10px;
   }
   .el-menu-vertical-demo {
-    width: 100%
+    // width: 100%
   }
   .el-menu-item:hover {
     min-width: 200px;
@@ -201,5 +204,9 @@
   }
   .aside /deep/ .el-card__body{
     padding: 7px !important
+  }
+  .aside{
+    position: sticky;
+    top: 0
   }
 </style>
