@@ -15,12 +15,10 @@ Vue.component('Affix', Affix);
 Vue.prototype.$api = api
 Vue.prototype.$loading = true
 api.get('productRecommend.xlsx', null, r => {
-  console.log(r[0]);
   Vue.prototype.$productRecommend = r[0]
   Vue.prototype.$loading = false
 })
 api.get('productAll.xlsx', null, r => {
-  console.log(r[0]);
   Vue.prototype.$productAll = r[0]
   Vue.prototype.$loadingProductAll = false
 })

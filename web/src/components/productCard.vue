@@ -22,24 +22,24 @@
             <div v-if='showList'>
               <el-tabs type="border-card" class='tab' stretch v-model="activeName">
                 <el-tab-pane label="畜禽" name='1'>
-                  <transition name="el-fade-in-linear">
+                  <transition name="el-zoom-in-center">
                     <div v-show='activeName=="1"'>
                       <productImg :productList='livestocklist' :loading='loading' v-show="activeName=='1'" :isTitle='isTitle' @showProductInfo='showProductInfo'></productImg>
                     </div>
                   </transition>
                 </el-tab-pane>
                 <el-tab-pane label="治疗药" name='2'>
-                  <transition name="el-fade-in-linear">
+                  <transition name="el-zoom-in-center">
                     <productImg v-show="activeName=='2'" :productList='curativelist' :loading='loading' :isTitle='isTitle' @showProductInfo='showProductInfo'></productImg>
                   </transition>
                 </el-tab-pane>
                 <el-tab-pane label="肠道药" name='3'>
-                  <transition name="el-fade-in-linear">
+                  <transition name="el-zoom-in-center">
                     <productImg v-show="activeName=='3'" :productList='intestinallist' :loading='loading' :isTitle='isTitle' @showProductInfo='showProductInfo'></productImg>
                   </transition>
                 </el-tab-pane>
                 <el-tab-pane label="保健类" name='4'>
-                  <transition name="el-fade-in-linear">
+                  <transition name="el-zoom-in-center">
                     <productImg v-show="activeName=='4'" :productList='healthlist' :loading='loading' :isTitle='isTitle' @showProductInfo='showProductInfo'></productImg>
                   </transition>
                 </el-tab-pane>
@@ -153,6 +153,7 @@
     watch: {
       productInfo(e) {},
       activeTab(e) {
+        this.loading=this.$loadingProductAll
         this.activeName = this.activeTab
       },
       search() {
@@ -161,6 +162,7 @@
           list3 = [],
           list4 = []
         this.productfilter = this.getTableData()
+        this.loading=this.$loadingProductAll
         let product = this.productfilter
         for (let i = 0; i < product.length; i++) {
           if (product[i].series === "畜禽") {
@@ -183,8 +185,8 @@
           list2 = [],
           list3 = [],
           list4 = []
-        console.log(this.getTableData());
         this.productfilter = this.getTableData()
+        this.loading=this.$loadingProductAll
         let product = this.productfilter
         for (let i = 0; i < product.length; i++) {
           if (product[i].series === "畜禽") {

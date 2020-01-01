@@ -78,7 +78,7 @@
         ishide: true,
         currentPage: 1,
         pageSize: 20,
-        loadingTab: true,
+        loadingTab: false,
       };
     },
     components: {},
@@ -96,20 +96,25 @@
     created() {},
     mounted() {},
     watch: {
-      productList(e) {},
+      productList(e) {
+        console.log(e);
+      },
        loading(e) {
-        this.loadingTab = e
+         console.log(e);
+         console.log(this.$loadingProductAll);
+        this.loadingTab = this.$loadingProductAll
       },
     },
     methods: {
       openInfo(e) {
+        console.log(e);
         this.$emit('showProductInfo', e)
       },
       handleSizeChange(val) {
       },
       handleCurrentChange(val) {
         this.currentPage = val
-        this.loadingTab = true
+        //this.loadingTab = true
         setTimeout(() => {
           this.loadingTab = false
         }, 1500)

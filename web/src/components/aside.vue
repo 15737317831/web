@@ -194,7 +194,7 @@
     border-radius: 10px;
     overflow: hidden;
     margin-top: 10px;
-    height: 140px;
+    height: 110px;
   }
   .search{
     position: absolute;

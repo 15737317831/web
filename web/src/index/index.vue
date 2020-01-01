@@ -41,7 +41,7 @@
 		</div>
 		<div class="main">
 			<el-tabs class="tabs" v-model="activeName" type="card" @tab-click="handleClick" stretch>
-				<el-tab-pane label="首页" name="1">
+				<el-tab-pane label="首页" name="1" >
 					<transition name="el-zoom-in-center">
 						<div v-show="activeName=='1'">
 							<Home @showProductInfo='showProductInfo'></Home>
@@ -53,7 +53,7 @@
 						</div>
 					</transition>
 				</el-tab-pane>
-				<el-tab-pane label="公司介绍" name="2">
+				<el-tab-pane label="公司介绍" name="2" >
 					<transition name="el-zoom-in-center">
 						<div v-show="activeName=='2'">
 							<!--公共banner-->
@@ -73,7 +73,7 @@
 						</div>
 					</transition>
 				</el-tab-pane>
-				<el-tab-pane label="产品展示" name="3">
+				<el-tab-pane label="产品展示" name="3" >
 					<transition name="el-zoom-in-center">
 						<div v-show="activeName=='3'">
 						<!--公共banner-->
@@ -93,7 +93,7 @@
 						</div>
 					</transition>
 				</el-tab-pane>
-				<el-tab-pane label="公司相册" name="4">
+				<el-tab-pane label="公司相册" name="4" >
 					<transition name="el-zoom-in-center">
 						<div v-show="activeName=='4'">
 						<!--公共banner-->
@@ -114,7 +114,7 @@
 							</div>
 					</transition>
 				</el-tab-pane>
-				<el-tab-pane label="产品视频" name="5">
+				<el-tab-pane label="产品视频" name="5" >
 					<transition name="el-zoom-in-center">
 						<div v-show="activeName=='5'">
 						<!--公共banner-->
@@ -134,7 +134,7 @@
 							</div>
 					</transition>
 				</el-tab-pane>
-				<el-tab-pane label="最新供应" name="6">
+				<el-tab-pane label="最新供应" name="6" >
 					<transition name="el-zoom-in-center">
 						<div v-show="activeName=='6'">
 						<!--公共banner-->
@@ -154,7 +154,7 @@
 							</div>
 					</transition>
 				</el-tab-pane>
-				<el-tab-pane label="资质证书" name="7">
+				<el-tab-pane label="资质证书" name="7" >
 					<transition name="el-zoom-in-center">
 						<div v-show="activeName=='7'">
 						<!--公共banner-->
@@ -174,7 +174,7 @@
 							</div>
 					</transition>
 				</el-tab-pane>
-				<el-tab-pane label="新闻资讯" name="8">
+				<el-tab-pane label="新闻资讯" name="8" >
 					<transition name="el-zoom-in-center">
 						<div v-show="activeName=='8'">
 						<!--公共banner-->
@@ -194,7 +194,7 @@
 							</div>
 					</transition>
 				</el-tab-pane>
-				<el-tab-pane label="联系我们" name="9">
+				<el-tab-pane label="联系我们" name="9" >
 					<transition name="el-zoom-in-center">
 						<div v-show="activeName=='9'">
 						<!--公共banner-->
@@ -237,7 +237,8 @@
 				activeTab: '',
 				productlist:[],
 				loading:true,
-				search :''
+				search :'',
+				pageloading:true
 			}
 		},
 		components: {
@@ -256,19 +257,25 @@
 		setTimeout(()=>{
 				this.productlist=this.$productAll
 				this.loading = this.$loadingProductAll
+				this.pageloading = false 
 			},3000)
 		},
 		methods: {
 			handleClick(tab, event) {
+				this.pageloading = true
+				setTimeout(()=>{
+					this.pageloading = false 
+				},1000)
 				this.tabContent = tab
 				this.showList = true
 			},
 			showProductInfo(e) {
 				console.log(e);
+				this.loading = this.$loadingProductAll
 				if (e==='more') {
 					setTimeout(() => {
 						this.activeName = '2'
-					}, 500);
+					}, 1000);
 					return
 				}
 				if (e.constructor === Object) {
@@ -276,14 +283,14 @@
 						this.activeName = '3'
 						this.showList = false
 						this.productInfo = e
-					}, 500);
+					}, 1000);
 				}else {
 					setTimeout(() => {
 						this.activeName = '3'
 						this.showList = true
 						this.activeTab = e.slice(0, 1)
 						this.search = e
-					}, 800)
+					}, 1000)
 				}
 			}
 		}
@@ -417,7 +424,7 @@
 		background: url(../images/banner.jpg) no-repeat center center;
 	}
 	.banner .banner_text {
-		margin: 0 auto;
+		margin: -60px auto;
 		width: 606px;
 		height: 212px;
 		background: rgba(81, 115, 124, 0.9);
