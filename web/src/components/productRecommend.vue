@@ -43,6 +43,12 @@ export default {
    
   },
   props: {
+    productList:{
+      type:Array,
+      default(){
+        return []
+      }
+    },
     data: {
       type: Array,
       default() {
@@ -126,8 +132,13 @@ export default {
   },
   data() {
     return {
-      
+      imglist:[]
     };
+  },
+  watch:{
+    productList(val){
+      this.imglist=val.slice(2,7)
+    }
   },
   mounted() {
      
@@ -139,21 +150,21 @@ export default {
   },
   computed: {
     firstData() {
-      let len = Math.floor(this.data.length / 2);
+      let len = Math.floor(this.imglist.length / 2);
       if (len == 0) {
         return [];
       }
-      return this.data.slice(0, len);
+      return this.imglist.slice(0, len);
     },
     lastData() {
-      let len = Math.floor(this.data.length / 2);
+      let len = Math.floor(this.imglist.length / 2);
       if (len == 0) {
         return [];
       }
-      return this.data.slice(len, 2 * len);
+      return this.imglist.slice(len, 2 * len);
     },
     len(){
-        let len =Math.floor(this.data.length/2)
+        let len =Math.floor(this.imglist.length/2)
         if(len == 0){
             return 24
         }else{
@@ -208,7 +219,9 @@ export default {
 }
 .desctitle{
   height: 30px;
-  margin: -120px;
+  margin: -130px;
+  font-size: 16px;
+  font-weight: 600;
 }
 #container ul.first {
   width: 100%;

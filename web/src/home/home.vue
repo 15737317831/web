@@ -5,7 +5,7 @@
         <img class="img" :src='item.url' ></img>
       </el-carousel-item>
     </el-carousel>
-    <Content @showProductInfo='showProductInfo' :productList='productList'></Content>
+    <Content @showProductInfo='showProductInfo' :productList='productList' :pageloading='pageloading'></Content>
   </div>
 </template>
 
@@ -14,7 +14,14 @@ import  Footer from '@/components/footer'
   import Content from '@/components/content.vue'
   export default {
     name: '',
-    props: {},
+    props: {
+      pageloading:{
+        type: Boolean,
+        default(){
+          return true
+        }
+      }
+    },
     data() {
       return {
         productList:[],

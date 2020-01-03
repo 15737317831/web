@@ -50,8 +50,8 @@
         <div class="l fl">
           <h3>工作热线</h3>
           <p>0371-6531-1511</p>
-          <h3 class="rx">24小时服务热线</h3>
-          <p>13631338039</p>
+          <!-- <h3 class="rx">24小时服务热线</h3>
+          <p>13631338039</p> -->
           <p class="weibo"><a href="javascript:;">新浪微博</a></p>
           <p class="qq"><a href="javascript:;">腾讯微博</a></p>
         </div>

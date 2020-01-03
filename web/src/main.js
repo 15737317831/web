@@ -8,8 +8,9 @@ import 'element-ui/lib/theme-chalk/index.css';
 import api from '@/api/index.js'
 import './utils/flexible'
 import 'view-design/dist/styles/iview.css';
-import { Affix } from 'view-design';
+import { Affix,Scroll  } from 'view-design';
 Vue.component('Affix', Affix);
+Vue.component('Scroll', Scroll);
 
 // import 'lib-flexible'
 Vue.prototype.$api = api

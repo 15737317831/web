@@ -44,7 +44,7 @@
 				<el-tab-pane label="首页" name="1" >
 					<transition name="el-zoom-in-center">
 						<div v-show="activeName=='1'">
-							<Home @showProductInfo='showProductInfo'></Home>
+							<Home @showProductInfo='showProductInfo' :pageloading='pageloading'></Home>
 								<el-container>
 								<el-footer>
 									<Footer></Footer>
@@ -83,7 +83,7 @@
 								<p class="en">All for the farmers</p>
 							</div>
 						</div>
-						<Product :search='search' :productlist='productlist' :loading='loading' :activeTab='activeTab' :tabContent='tabContent' :showList='showList' :productInfo='productInfo' @showProductInfo='showProductInfo'></Product>
+						<Product :search='search' :productlist='productlist' :loading='pageloading' :activeTab='activeTab' :tabContent='tabContent' :showList='showList' :productInfo='productInfo' @showProductInfo='showProductInfo'></Product>
 						<!-- 公共底部 -->
 						<el-container>
 							<el-footer>
@@ -103,7 +103,7 @@
 								<p class="en">All for the farmers</p>
 							</div>
 						</div>
-						<Content :tabContent='tabContent'></Content>
+						<companyphoto :tabContent='tabContent'></companyphoto>
 						<!-- 公共底部 -->
 						<el-container>
 							<el-footer>
@@ -114,18 +114,18 @@
 							</div>
 					</transition>
 				</el-tab-pane>
-				<el-tab-pane label="产品视频" name="5" >
+				<!-- <el-tab-pane label="产品视频" name="5" >
 					<transition name="el-zoom-in-center">
 						<div v-show="activeName=='5'">
-						<!--公共banner-->
+					
 						<div class="banner">
 							<div class="banner_text">
 								<p class="zh">康普尔药业<br>一切为了养殖户</p>
 								<p class="en">All for the farmers</p>
 							</div>
 						</div>
-						<Content :tabContent='tabContent'></Content>
-						<!-- 公共底部 -->
+						<companyvideo :tabContent='tabContent'></companyvideo>
+				
 						<el-container>
 							<el-footer>
 								<Footer></Footer>
@@ -133,7 +133,7 @@
 						</el-container>
 							</div>
 					</transition>
-				</el-tab-pane>
+				</el-tab-pane> -->
 				<el-tab-pane label="最新供应" name="6" >
 					<transition name="el-zoom-in-center">
 						<div v-show="activeName=='6'">
@@ -144,7 +144,7 @@
 								<p class="en">All for the farmers</p>
 							</div>
 						</div>
-						<Content :tabContent='tabContent'></Content>
+						<latestsupply :tabContent='tabContent'></latestsupply>
 						<!-- 公共底部 -->
 						<el-container>
 							<el-footer>
@@ -164,7 +164,7 @@
 								<p class="en">All for the farmers</p>
 							</div>
 						</div>
-						<Content :tabContent='tabContent'></Content>
+						<qualification :tabContent='tabContent'></qualification>
 						<!-- 公共底部 -->
 						<el-container>
 							<el-footer>
@@ -184,7 +184,7 @@
 								<p class="en">All for the farmers</p>
 							</div>
 						</div>
-						<Content :tabContent='tabContent'></Content>
+						<news :tabContent='tabContent'></news>
 						<!-- 公共底部 -->
 						<el-container>
 							<el-footer>
@@ -204,7 +204,7 @@
 								<p class="en">All for the farmers</p>
 							</div>
 						</div>
-						<Content :tabContent='tabContent'></Content>
+						<contact :tabContent='tabContent'></contact>
 						<!-- 公共底部 -->
 						<el-container>
 							<el-footer>
@@ -225,6 +225,12 @@
 	import Product from '@/product/product.vue'
 	import Content from '@/components/content.vue'
 	import companydetails from '@/companyDetails/companydetails.vue'
+	import companyphoto from '@/companyphoto/companyphoto'
+	import companyvideo from '@/companyvideo/companyvideo'
+	import latestsupply from '@/latestsupply/latestsupply'
+	import qualification from '@/qualification/qualification'
+	import news from '@/news/news'
+	import contact from '@/contact/contact'
 
 	export default {
 		name: 'index',
@@ -246,7 +252,13 @@
 			Content,
 			Product,
 			companydetails,
-			Footer
+			Footer,
+			companyphoto,
+			companyvideo,
+			latestsupply,
+			qualification,
+			news,
+			contact
 		},
 		created () {
 		},
@@ -270,7 +282,6 @@
 				this.showList = true
 			},
 			showProductInfo(e) {
-				console.log(e);
 				this.loading = this.$loadingProductAll
 				if (e==='more') {
 					setTimeout(() => {
@@ -352,6 +363,10 @@
 		padding: 10px;
 		z-index: 10;
 	}
+	.top_bar ul li.wx .wxerweima img{
+		width: 100px;
+		height: 100px;
+	}
 	.top_bar ul li:hover .wxerweima {
 		display: block;
 	}
@@ -405,7 +420,7 @@
 		line-height: 60px;
 		font-size: 18px;
 		color: #099a10;
-		padding-left: 30px;
+		padding-left: 50px;
 		background: url(../images/tel_icon.png) left center no-repeat;
 	}
 	.w1200 {

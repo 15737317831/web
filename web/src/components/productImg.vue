@@ -7,7 +7,7 @@
         </div>
       </div>
       <ul ref='content' class="content" v-loading="loadingTab">
-        <li class='item' v-for="item in imglistData" :key='item.productName'>
+        <li class='item' v-for="item in imglistData" >
           <img v-if='isimg' class="img" :src="item.url" alt="" @click="openInfo(item)">
           <div class="text">{{item.productName}}</div>
         </li>
@@ -77,8 +77,8 @@
       return {
         ishide: true,
         currentPage: 1,
-        pageSize: 20,
-        loadingTab: false,
+        pageSize: 12,
+        loadingTab: true,
       };
     },
     components: {},
@@ -97,24 +97,21 @@
     mounted() {},
     watch: {
       productList(e) {
-        console.log(e);
+        this.loadingTab = false
       },
        loading(e) {
-         console.log(e);
-         console.log(this.$loadingProductAll);
         this.loadingTab = this.$loadingProductAll
       },
     },
     methods: {
       openInfo(e) {
-        console.log(e);
         this.$emit('showProductInfo', e)
       },
       handleSizeChange(val) {
       },
       handleCurrentChange(val) {
         this.currentPage = val
-        //this.loadingTab = true
+        this.loadingTab = true
         setTimeout(() => {
           this.loadingTab = false
         }, 1500)
@@ -149,7 +146,7 @@
   }
   .img {
     float: left;
-    width: 169px;
+    width: 168px;
     height: 140px;
     margin-right: 10px;
     border-radius: 5px
@@ -173,7 +170,10 @@
     box-shadow: 5px 5px 5px #ccc;
   }
   .content .item:hover {
-    transform: scale(1.1, 1.1)
+    transform: scale(1.1, 1.1);
+    color: #39ab31;
+    border-color: #39ab31;
+    border: 1px solid
   }
   .page {
     height: 40px;

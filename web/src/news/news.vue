@@ -1,5 +1,5 @@
 <template>
-  <div name='content'>
+  <div name='news'>
     <el-container>
       <el-aside class="aside" style="overflow:auto">
         <Aside @showProductInfo='showProductInfo'></Aside>
@@ -13,10 +13,7 @@
               <el-breadcrumb-item v-else>{{tabContent.label}}</el-breadcrumb-item>
             </el-breadcrumb>
           </div>
-          <Card :label='label' :contenttext='contenttext' :imgsrc='imgsrc' @showProductInfo='showProductInfo' :ismore='ismore'></Card>
-          <productRecommend :label='productlabel' @showProductInfo='showProductInfo' :productList='productList'></productRecommend>
-          <productImg :label='productlist' @showProductInfo='showProductInfo' :productList='productList' :loading='pageloading'></productImg>
-          <companyInof :label='companyInof'></companyInof>
+          <Card :label='label' :contenttext='contenttext' :isimg='isimg' @showProductInfo='showProductInfo' :ismore='ismore'></Card>
         </el-main>
       </el-container>
     </el-container>
@@ -30,7 +27,7 @@
   import Card from '@/components/card'
   import Aside from "@/components/aside"
   export default {
-    name: 'content',
+    name: 'news',
     props: {
       tabContent: {
         type: Object,
@@ -38,27 +35,21 @@
           return {}
         }
       },
-      pageloading:{
-        type: Boolean,
-        default(){
-          return true
-        }
-      }
     },
     data() {
       return {
         isimg: false,
-        ismore: true,
-        imgsrc: require('@/img/content/defaultlogo_big.png'),
-        label: '公司简介',
-        contenttext: ['河南康普尔动物药业有限公司坐落于美丽的中原腹地郑州，交通便利、信息灵通，是一家专门从事动物生化药品及动物保健品研发、生产、经营，技术合作及兽药原料和制剂贸易的股份制企业。注册资金1000万。公司现有职工300余人，其中管理人员58人，均为大学文化，中级以上技术人员23人，并聘请博士3人，硕士6人，教授11人。在与中国农业大学、中山大学、西北农林、华南农大等多家院校有关专家合作的基础上，致力于对高效生化药剂的研究开发、生产经营和进出口。  郑州新普康药业有限公司是一家私营企业，所在地区位于河南郑州市,主营产品或服务为各种益母康   康乐加   康加。我们以诚信、实力和质量获得业界的高度认可，坚持以客户为核心，“质量到位、服务一流”'],
+        ismore: false,
+        label: '新闻资讯',
+        contenttext: ['夏季蛋鸡产蛋下降怎么办？','产蛋鸡的最适温度是15℃~23℃，只有在这种环境下，产蛋鸡才有可能最大限度的发挥其生产性能。当夏季环境温度超过28度时，产蛋鸡体内代谢就会发生变化，表现出采食量降低，产蛋率下降，蛋个变小，砂皮蛋增多，鸡群死亡率增加，给养殖户造成了很大的经济损失。这就是鸡群热应激带来的危害,严重时可以致鸡死亡',
+       '防治措施：1、适当降低蛋鸡的饲养密度，可避免因饲养密度过大而引起舍温升高，有利于肌体散热和空气的流通。一般平养鸡由每平方米6-7羽减少到3-5羽，笼养鸡减少到原来的70%-80%。夏季高温来临之前，应对产蛋鸡群中病、残、弱鸡、低产鸡、肥胖鸡提前淘汰；在高产期或高峰期来临之前，对鸡群中体重不达标或未开产的鸡及时淘汰，减少鸡群的饲养密度，有利于鸡群散热，改善饲养环境。',
+     ' 2、水——水是家禽的一种最重要的营养物质，在中等温度下，家禽的饮水量是采食量的1倍，而在30℃时的饮水量比15℃时高1倍。正常产蛋鸡群断水24小时，可使鸡群产蛋率下降30%，断水48小时，就可使鸡群绝产，并且28-30天后产蛋才开始恢复。在热应激状态下，产蛋鸡断水12小时，就出现死亡。因为在热应激状态下，鸡的呼吸道蒸发散热是它主要的散热方式，同时从呼吸道蒸发掉大量水分，所以鸡群一旦缺水，就会出现死亡。在鸡群处于热应激状态下，除了不间断饮水外，还要想办法降低饮水的温度，因为凉水可以增加鸡的饮水量，缓解鸡体内蓄积的热量，增加鸡的采食量。'],
         detail: '精品推荐',
-        detailtext: ['公司名称：  郑州新普康药业有限公司', '企业类型：  私营企业', '经营模式：  生产型', '所在地区：  河南郑州市', '品牌名称： ', '主营产品：  益母康 康乐加 康加', '主营行业：  ', '公司网站：  http://xinpukang.51sole.com'],
         productlabel: '精品推荐',
         productlist: '产品橱窗',
         companyInof: '工商信息',
         productList: [],
-        loading: true
+        loading: true,
       };
     },
     components: {

@@ -2,7 +2,7 @@
   <div name='card'>
     <el-container>
       <el-aside class="aside">
-        <Aside @showProductInfo='showProductInfo'></Aside>
+        <Aside @showProductInfo='showProductInfo' ></Aside>
       </el-aside>
       <el-container>
         <el-main>
@@ -20,7 +20,14 @@
               </div>
             </div>
             <div v-if='showList'>
-              <el-tabs type="border-card" class='tab' stretch v-model="activeName">
+              <el-tabs type="border-card" class='tab' stretch v-model="activeName" @tab-click='clickTab'>
+                <el-tab-pane label="全部" name='0'>
+                  <transition name="el-zoom-in-center">
+                    <div v-show='activeName=="0"'>
+                      <productImg :productList='productfilter' :loading='loading' v-show="activeName=='0'" :isTitle='isTitle' @showProductInfo='showProductInfo'></productImg>
+                    </div>
+                  </transition>
+                </el-tab-pane>
                 <el-tab-pane label="畜禽" name='1'>
                   <transition name="el-zoom-in-center">
                     <div v-show='activeName=="1"'>
@@ -132,7 +139,7 @@
     data() {
       return {
         isTitle: false,
-        activeName: '1',
+        activeName: '0',
         curativelist: [],
         productfilter: [],
         intestinallist: [],
@@ -154,14 +161,14 @@
       productInfo(e) {},
       activeTab(e) {
         this.loading=this.$loadingProductAll
-        this.activeName = this.activeTab
+        this.activeName = '0'
       },
-      search() {
+      search(e) {
         let list1 = [],
           list2 = [],
           list3 = [],
           list4 = []
-        this.productfilter = this.getTableData()
+        this.productfilter = this.getTableData(e)
         this.loading=this.$loadingProductAll
         let product = this.productfilter
         for (let i = 0; i < product.length; i++) {
@@ -175,12 +182,17 @@
             list4.push(product[i])
           }
         }
+        window.livestocklist = list1;
+        window.livestocklist = list1
+        window.curativelist = list2
+        window.intestinallist = list3
+        window.healthlist = list4
         this.livestocklist = list1
         this.curativelist = list2
         this.intestinallist = list3
         this.healthlist = list4
       },
-      productlist() {
+      productlist(e) {
         let list1 = [],
           list2 = [],
           list3 = [],
@@ -199,6 +211,11 @@
             list4.push(product[i])
           }
         }
+        window.livestocklist = list1;
+        window.livestocklist = list1
+        window.curativelist = list2
+        window.intestinallist = list3
+        window.healthlist = list4
         this.livestocklist = list1
         this.curativelist = list2
         this.intestinallist = list3
@@ -206,16 +223,23 @@
       }
     },
     methods: {
+      clickTab(tab, event){
+        if(tab.index==='0'){
+          this.search=''
+          this.getTableData()
+        }
+      },
       showProductInfo(e) {
         this.$emit('showProductInfo', e)
       },
       // //检索功能 productlist.productCode
-      getTableData() {
+      getTableData(e) {
         let newData = [];
         for (let i = 0; i < this.productlist.length; i++) {
           let product = this.productlist[i];
           if (
-            (this.search != '' && (product.productName || product.productCode).search(this.search) == -1)
+            (this.search != '' && (product.productName.toString()).search(this.search) == -1)&&
+            (this.search != '' && (product.productCode.toString()).search(this.search) == -1)
           ) {
             continue
           } else {

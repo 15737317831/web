@@ -1,5 +1,5 @@
 <template>
-  <div name='content'>
+  <div name='contact'>
     <el-container>
       <el-aside class="aside" style="overflow:auto">
         <Aside @showProductInfo='showProductInfo'></Aside>
@@ -13,10 +13,7 @@
               <el-breadcrumb-item v-else>{{tabContent.label}}</el-breadcrumb-item>
             </el-breadcrumb>
           </div>
-          <Card :label='label' :contenttext='contenttext' :imgsrc='imgsrc' @showProductInfo='showProductInfo' :ismore='ismore'></Card>
-          <productRecommend :label='productlabel' @showProductInfo='showProductInfo' :productList='productList'></productRecommend>
-          <productImg :label='productlist' @showProductInfo='showProductInfo' :productList='productList' :loading='pageloading'></productImg>
-          <companyInof :label='companyInof'></companyInof>
+          <Card :label='label' :contentlist='contentlist' :ismore='ismore' @showProductInfo='showProductInfo' :headline='headline'></Card>
         </el-main>
       </el-container>
     </el-container>
@@ -30,7 +27,7 @@
   import Card from '@/components/card'
   import Aside from "@/components/aside"
   export default {
-    name: 'content',
+    name: 'contact',
     props: {
       tabContent: {
         type: Object,
@@ -38,22 +35,25 @@
           return {}
         }
       },
-      pageloading:{
-        type: Boolean,
-        default(){
-          return true
-        }
-      }
     },
     data() {
       return {
         isimg: false,
-        ismore: true,
+        ismore: false,
         imgsrc: require('@/img/content/defaultlogo_big.png'),
-        label: '公司简介',
-        contenttext: ['河南康普尔动物药业有限公司坐落于美丽的中原腹地郑州，交通便利、信息灵通，是一家专门从事动物生化药品及动物保健品研发、生产、经营，技术合作及兽药原料和制剂贸易的股份制企业。注册资金1000万。公司现有职工300余人，其中管理人员58人，均为大学文化，中级以上技术人员23人，并聘请博士3人，硕士6人，教授11人。在与中国农业大学、中山大学、西北农林、华南农大等多家院校有关专家合作的基础上，致力于对高效生化药剂的研究开发、生产经营和进出口。  郑州新普康药业有限公司是一家私营企业，所在地区位于河南郑州市,主营产品或服务为各种益母康   康乐加   康加。我们以诚信、实力和质量获得业界的高度认可，坚持以客户为核心，“质量到位、服务一流”'],
+        label: '联系我们',
+        headline:'郑州新普康药业有限公司',
+        contentlist: [
+          {label:"联系人：", value: "范经理"},
+          {label:"全国免费咨询电话：", value: "0371-6531-1511"},
+         {label:"传真： ", value: "0371-63217072"},
+         {label:"注册地址:", value:	 " 郑州市金水区郑花路62号黄河建工集团B座1709号"},
+         {label:"网址: ", value: " www.kangpuer.cn"},
+         {label:"经营范围	:" , value:" 销售：兽药、饲料、饲料添加剂、饲料原料、宠物用品；畜牧养殖技术开发、"},
+         {label:"", value:"技术咨询、技术转让；生物技术开发、技术咨询、技术转让；商务信息咨询；"},
+          {label:"", value:"企业管理咨询；会议会展服务。（涉及许可经营项目，应取得相关部门许可后方可经营）"},
+        ],
         detail: '精品推荐',
-        detailtext: ['公司名称：  郑州新普康药业有限公司', '企业类型：  私营企业', '经营模式：  生产型', '所在地区：  河南郑州市', '品牌名称： ', '主营产品：  益母康 康乐加 康加', '主营行业：  ', '公司网站：  http://xinpukang.51sole.com'],
         productlabel: '精品推荐',
         productlist: '产品橱窗',
         companyInof: '工商信息',

@@ -15,14 +15,16 @@
           <el-col :span="6"><span class="fontSize">产品关键字: </span>{{productInfo.key}}</el-col>
           <el-col :span="8"><span class="fontSize">行业: </span>{{productInfo.industry}}</el-col>
           <el-col :span="8"><span class="fontSize">产品系列: </span>{{productInfo.series}}</el-col>
-          <el-col :span="8"><span class="fontSize">发布日期: </span>{{productInfo.date}}</el-col>
+          <!-- <el-col :span="8"><span class="fontSize">发布日期: </span>{{productInfo.date}}</el-col> -->
         </el-row>
       </div>
     </el-card>
+    <Card :label='label' :basis='productInfo.basis' :character='productInfo.character' :attending='productInfo.attending' :dosage='productInfo.dosage' :announcements='productInfo.announcements' :packaging='productInfo.packaging' :reposit='productInfo.reposit' :period='productInfo.period' :isimg='isimg'></Card>
     </div>
 </template>
 
 <script>
+import Card from "@/components/card"
 export default {
     name:'productInfo',
     props: {
@@ -35,11 +37,12 @@ export default {
     },
     data() {
         return {
-
+           label:'产品说明',
+          isimg: false
         };
     },
     components: {
-
+      Card
     },
     computed: {
 
