@@ -9,7 +9,7 @@
           
       <div style="margin-bottom: 10px">
         <el-breadcrumb separator-class="el-icon-arrow-right">
-          <el-breadcrumb-item :to="{ path: '/' }">首页</el-breadcrumb-item>
+          <el-breadcrumb-item ><a @click="toIndex">首页</a></el-breadcrumb-item>
           <el-breadcrumb-item v-if='!tabContent.label'>公司名称</el-breadcrumb-item>
           <el-breadcrumb-item v-else>{{tabContent.label}}</el-breadcrumb-item>
         </el-breadcrumb>
@@ -66,6 +66,9 @@ export default {
     methods: {
        showProductInfo(e){
         this.$emit('showProductInfo',e )
+      },
+      toIndex(){
+        this.$emit('showProductInfo','index' )
       }
     },
 };

@@ -26,6 +26,20 @@ import  Footer from '@/components/footer'
       return {
         productList:[],
         imglist:[
+           {
+            url:require("@/images/office.jpg"),
+            description: "产品1",
+            productName: '产品1',
+            band: '广畜',
+            price:'111',
+            model: 'XXX',
+            address: '郑州市金水区XX路',
+            number: 999,
+            key: '2222',
+            industry: '养殖>兽药疫苗>猪用药',
+            series: '畜禽',
+            date: '2019/12/20'
+          },
           {
             url:require("@/images/slider_pic3.jpg"),
             description: "产品1",

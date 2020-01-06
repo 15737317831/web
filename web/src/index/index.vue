@@ -103,7 +103,7 @@
 								<p class="en">All for the farmers</p>
 							</div>
 						</div>
-						<companyphoto :tabContent='tabContent'></companyphoto>
+						<companyphoto :tabContent='tabContent' @showProductInfo='showProductInfo'></companyphoto>
 						<!-- 公共底部 -->
 						<el-container>
 							<el-footer>
@@ -144,7 +144,7 @@
 								<p class="en">All for the farmers</p>
 							</div>
 						</div>
-						<latestsupply :tabContent='tabContent'></latestsupply>
+						<latestsupply :tabContent='tabContent' @showProductInfo='showProductInfo'></latestsupply>
 						<!-- 公共底部 -->
 						<el-container>
 							<el-footer>
@@ -164,7 +164,7 @@
 								<p class="en">All for the farmers</p>
 							</div>
 						</div>
-						<qualification :tabContent='tabContent'></qualification>
+						<qualification :tabContent='tabContent' @showProductInfo='showProductInfo'></qualification>
 						<!-- 公共底部 -->
 						<el-container>
 							<el-footer>
@@ -184,7 +184,7 @@
 								<p class="en">All for the farmers</p>
 							</div>
 						</div>
-						<news :tabContent='tabContent'></news>
+						<news :tabContent='tabContent' @showProductInfo='showProductInfo'></news>
 						<!-- 公共底部 -->
 						<el-container>
 							<el-footer>
@@ -204,7 +204,7 @@
 								<p class="en">All for the farmers</p>
 							</div>
 						</div>
-						<contact :tabContent='tabContent'></contact>
+						<contact :tabContent='tabContent' @showProductInfo='showProductInfo'></contact>
 						<!-- 公共底部 -->
 						<el-container>
 							<el-footer>
@@ -286,6 +286,12 @@
 				if (e==='more') {
 					setTimeout(() => {
 						this.activeName = '2'
+					}, 1000);
+					return
+				}
+				if(e==='index'){
+					setTimeout(() => {
+						this.activeName = '1'
 					}, 1000);
 					return
 				}
