@@ -42,7 +42,7 @@
         ismore: false,
         imgsrc: require('@/img/content/defaultlogo_big.png'),
         label: '联系我们',
-        headline:'郑州新普康药业有限公司',
+        headline:'河南康普尔动物药业有限公司',
         contentlist: [
           {label:"联系人：", value: "范经理"},
           {label:"全国免费咨询电话：", value: "0371-6531-1511"},
