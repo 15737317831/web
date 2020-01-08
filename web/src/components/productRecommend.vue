@@ -53,74 +53,7 @@ export default {
       type: Array,
       default() {
         return [
-          {
-            url:require("@/img/content/1.jpg"),
-            description: "产品1",
-            productName: '产品1',
-            band: '广畜',
-            price:'111',
-            model: 'XXX',
-            address: '郑州市金水区XX路',
-            number: 999,
-            key: '2222',
-            industry: '养殖>兽药疫苗>猪用药',
-            series: '畜禽',
-            date: '2019/12/20'
-          },
-          {
-            url:require("@/img/content/2.jpg"),
-            description: "产品2",
-             productName: '产品1',
-            band: '广畜',
-            price:'111',
-            model: 'XXX',
-            address: '郑州市金水区XX路',
-            number: 999,
-            key: '2222',
-            industry: '养殖>兽药疫苗>猪用药',
-            series: '畜禽',
-            date: '2019/12/20'
-          },{
-            url:require("@/img/content/3.jpg"),
-            description: "产品3",
-             productName: '产品1',
-            band: '广畜',
-            price:'111',
-            model: 'XXX',
-            address: '郑州市金水区XX路',
-            number: 999,
-            key: '2222',
-            industry: '养殖>兽药疫苗>猪用药',
-            series: '畜禽',
-            date: '2019/12/20'
-          },{
-            url:require("@/img/content/4.jpg"),
-            description: "产品4",
-             productName: '产品1',
-            band: '广畜',
-            price:'111',
-            model: 'XXX',
-            address: '郑州市金水区XX路',
-            number: 999,
-            key: '2222',
-            industry: '养殖>兽药疫苗>猪用药',
-            series: '畜禽',
-            date: '2019/12/20'
-          },{
-            url:require("@/img/content/5.jpg"),
-            description: "产品5",
-             productName: '产品1',
-            band: '广畜',
-            price:'111',
-            model: 'XXX',
-            address: '郑州市金水区XX路',
-            number: 999,
-            key: '2222',
-            industry: '养殖>兽药疫苗>猪用药',
-            series: '畜禽',
-            date: '2019/12/20'
-          }
-        ];
+        ]
       }
     },
     label:{

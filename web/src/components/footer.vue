@@ -10,7 +10,7 @@
         <img class="fr logimg" src="../images/logo.png"/>
       </div>
       <div class="middle fl">
-        <ul>
+        <ul class="fl">
           <li>
             <h3>网站首页</h3>
             <p><a href="#">公司简介</a></p>
@@ -31,33 +31,37 @@
           </li>
           <li>
             <h3>友情链接</h3>
-            <p class="flink">
-              <a href="#"><span>网易</span></a>
-              <a href="#"><span>搜狐</span></a>
-              <a href="#"><span>网易</span></a>
-              <a href="#"><span>新浪</span></a>
-              <a href="#"><span>网易</span></a>
-              <a href="#"><span>搜狐</span></a>
-              <a href="#"><span>网易</span></a>
-              <a href="#"><span>中兴</span></a>
-              <a href="#"><span>腾讯</span></a>
-              <a href="#"><span>中兴</span></a>
-            </p>
+            <div class="flink">
+              <div><a href="#"><span>网易</span></a></div>
+              <div><a href="#"><span>搜狐</span></a></div>
+              <div><a href="#"><span>网易</span></a></div>
+              <div><a href="#"><span>新浪</span></a></div>
+              <div><a href="#"><span>网易</span></a></div>
+              <div><a href="#"><span>搜狐</span></a></div>
+              <div><a href="#"><span>网易</span></a></div>
+              <div><a href="#"><span>中兴</span></a></div>
+              <div><a href="#"><span>腾讯</span></a></div>
+              <div><a href="#"><span>中兴</span></a></div>
+            </div>
           </li>
         </ul>
       </div>
       <div class="right fr">
         <div class="l fl">
           <h3>工作热线</h3>
-          <p>0371-6531-1511</p>
+          <div>0371-6531-1511</div>
           <!-- <h3 class="rx">24小时服务热线</h3>
           <p>13631338039</p> -->
-          <p class="weibo"><a href="javascript:;">新浪微博</a></p>
-          <p class="qq"><a href="javascript:;">腾讯微博</a></p>
+          <div class="weibo">
+            <img src="../images/weibo.svg" alt="">
+            <a href="javascript:;">新浪微博</a></div>
+          <div class="qq">
+            <img src="../images/qq.svg" alt="">
+            <a href="javascript:;">腾讯微博</a></div>
         </div>
         <div class="r fr">
           <img class="erweima" src="../images/erweima.png" />
-          <p>扫一扫二维码有惊喜</p>
+          <div>扫一扫二维码有惊喜</div>
         </div>
       </div>
       <div class="copyright">
@@ -124,13 +128,18 @@
   a:hover {
     color: #099a10;
   }
-  /* .w1200 {
-		margin: -44px auto;
+  .w1200 {
+    position: relative;
+    display: flex;
+     align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+		/* margin: -44px auto;
 		width: 1000px;
 		min-width: 65px;
 		height: auto;
-		overflow: hidden;
-	}  */
+		overflow: hidden; */
+	} 
   .footer {
     padding: 0;
     /* background: #1b434e; */
@@ -142,6 +151,11 @@
     padding: 5px 0;
   }
   .footer .middle {
+    /* display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle; */
+    line-height: 14px;
     padding: 0;
   }
   .footer .middle ul li {
@@ -149,6 +163,7 @@
     padding: 0 10px;
   }
   .footer .middle ul li h3 {
+    line-height: 14px;
     font-size: 12px;
     font-weight: 600;
     margin-bottom: 8px;
@@ -159,9 +174,16 @@
     margin-top: 8px;
     /* max-width: 165px; */
   }
-  .footer .middle ul li p.flink a {
-    display: block;
-    float: left;
+  .footer .middle ul li .flink{
+    width: 150px;
+  }
+  .footer .middle ul li .flink div{
+    display: inline-block;
+    margin-top: 10px;
+  }
+  .footer .middle ul li p.flink div {
+   
+    /* float: left; */
     margin-right: 10px;
     margin-bottom: 10px;
   }
@@ -169,6 +191,10 @@
     width: 300px;
     position: relative;
     padding: 0;
+    display: flex;
+     align-items: center;
+    justify-content: center;
+    vertical-align: middle;
   }
   .footer .right:after {
     content: "";
@@ -176,13 +202,20 @@
     height: 100%;
     width: 1px;
     background: #647f87;
-    left: -30px;
+    left: 10px;
     top: 0px;
   }
   .footer .right .l h3 {
     font-size: 12px;
     font-weight: 600;
     margin-bottom: 5px;
+  }
+  .footer .right .l div,.footer .right .fr div{
+    text-align: left;
+    line-height: 18px;
+    width: 150px;
+    margin-left: 20px;
+    font-size: 12px
   }
   .footer .right .l h3.rx {
     margin-top: 10px;
@@ -192,34 +225,56 @@
     color: #fff;
     font-weight: 600;
   }
-  .footer .right .l p.weibo {
-    font-size: 10px;
-    font-weight: normal;
-    color: #a1c6d2;
-    margin-top: 5px;
-    background: url(../images/weibo.svg) no-repeat left center;
-    padding-left: 18px;
-    font-family: "宋体";
-    height: 14px;
-    line-height: 14px;
+  .footer .right .l{
+    width: 120px;
+    text-align: center;
   }
-  .footer .right .l p.qq {
+  .footer .right .r{
+    width: 120px;
+    margin-left: 10px
+  }
+  .footer .right .l .weibo {
+    white-space: nowrap;
+    width: 100px;
     font-size: 10px;
     font-weight: normal;
     color: #a1c6d2;
     margin-top: 5px;
-    background: url(../images/qq.svg) no-repeat left center;
-    padding-left: 25px;
+    margin-left: 20px;
+    /* background: url(../images/weibo.svg) no-repeat left center; */
+    /* padding-left: 25px; */
     font-family: "宋体";
     height: 14px;
-    line-height: 14px;
+    line-height: 16px;
+  }
+  .footer .right .l .qq {
+    white-space: nowrap;
+     width: 80px;
+    font-size: 10px;
+    font-weight: normal;
+    color: #a1c6d2;
+    margin-left: 20px;
+    margin-top: 5px;
+    /* background: url(../images/qq.svg) no-repeat left center; */
+    /* padding-left: 25px; */
+    font-family: "宋体";
+    height: 14px;
+    line-height: 16px;
+  }
+  .footer .right .l .weibo img,.footer .right .l .qq img{
+    width: 15px;
+    height: 15px;
+    float: left; 
+    margin-right: 10px
   }
   .footer .right .r p {
     text-align: center;
     margin-top: 3px;
   }
   .footer .copyright {
-    clear: both;
+    /* clear: both; */
+    position: absolute;
+    bottom: -15px;
     width: 100%;
     font-size: 10px;
     color: #929292;
@@ -227,6 +282,8 @@
     padding-top: 0;
   }
   .erweima{
+    margin-left: 30px;
+    margin-bottom: 5px;
     width: 80px;
     height: 80px;
   }

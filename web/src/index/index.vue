@@ -4,16 +4,18 @@
 			<!--top bar-->
 			<div class="top_bar">
 				<div class="w1200">
-					<div class="fl">欢迎来到河南康普尔动物药业有限公司官网！</div>
+					<div class="fl ">欢迎来到河南康普尔动物药业有限公司官网！</div>
 					<ul class="fr">
 						<li class="wx">
-							<div href="javascript:;">官方微信</div>
+							<img class="wxImg" src="../images/wx_icon.png" alt="">
+							<div class="">官方微信</div>
 							<div class="wxerweima">
 								<img src="../images/erweima.png" />
 							</div>
 						</li>
-						<li>
-							<div>官方微博</div>
+						<li class='wb'>
+								<img class="wbImg" src="../images/wb_icon.png" alt="">
+							<div class="">官方微博</div>
 						</li>
 					</ul>
 				</div>
@@ -33,6 +35,7 @@
 									</form>
 								</div> -->
 					<div class="tel fr">
+						<img class="telImg" src="../images/tel_icon.png" alt="" width="40px" height="40px">
 						0371-6531-1511
 					</div>
 				</div>
@@ -318,8 +321,17 @@
 <style scoped lang='less'>
 	// @import '@/css/style.css';
 	// @import '@/css/mislider.css';
+	.index{
+		
+	}
+	.tabs{
+
+	}
+	.index /deep/.el-container{
+		 min-height: calc(55vh - 700px);
+	}
 	.main {
-		margin: -10px auto;
+		margin: 0 auto;
 		width: 94%;
 	}
 	.main /deep/ .el-tabs--card>.el-tabs__header .el-tabs__item {
@@ -333,37 +345,65 @@
 	}
 	/* 布局容器 */
 	.el-footer {
-		width: 100%;
+		width: 1120px;
 		background-color: #1b434e;
 		color: #9d9d9d;
 		text-align: center;
 		font-size: 12px;
 		line-height: 12px;
-		height: 150px !important;
+		height: 166px !important;
 		padding-top: 20px;
 	}
 	.main /deep/ .el-container .el-aside {
 		overflow: hidden !important;
 	}
 	.top_bar {
+		font-size: 10px;
 		height: 20px;
 		background: #f5f5f5;
-		line-height: 20px;
+		line-height: 30px;
 		color: #666;
 		padding: 0 20px 0 20px;
-		margin: -60px auto 0;
+		margin: -55px auto 0;
+	}
+	.scale{
+		transform: scale(0.93);
 	}
 	.top_bar .w1200 {
 		overflow: visible;
+		line-height: 20px;
 	}
 	.top_bar ul li {
 		display: inline-block;
 		margin-left: 20px;
 		padding-left: 25px;
 		position: relative;
+		font-size: 10px;
+	}
+	.top_bar ul li.wx{
+		line-height: 20px;
+		float: right;
+		display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+	}
+	.wxImg,.wbImg{
+		width: 15px;
+		height: 15px;
+		margin-right: 5px
+	}
+	.top_bar ul li.wb{
+		line-height: 20px;
+		display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
 	}
 	.top_bar ul li.wx .wxerweima {
 		position: absolute;
+		top: 25px;
+		right: -10px;
 		display: none;
 		background: #fff;
 		padding: 10px;
@@ -376,12 +416,12 @@
 	.top_bar ul li:hover .wxerweima {
 		display: block;
 	}
-	.top_bar ul li:first-child {
-		background: url(../images/wx_icon.png) left center no-repeat;
-	}
-	.top_bar ul li+li {
-		background: url(../images/wb_icon.png) left center no-repeat;
-	}
+	// .top_bar ul li:first-child {
+	// 	background: url(../images/wx_icon.png) left center no-repeat;
+	// }
+	// .top_bar ul li+li {
+	// 	background: url(../images/wb_icon.png) left center no-repeat;
+	// }
 	.fr {
 		float: right;
 	}
@@ -399,9 +439,10 @@
 	.lh {
 		font-size: 24px;
 		line-height: 120px;
+		font-weight: 900;
 	}
 	.top .search {
-		background: url(../images/search_bg.png) center center no-repeat;
+		// background: url(../images/search_bg.png) center center no-repeat;
 	}
 	.top .search input {
 		// display: inline-block;
@@ -424,17 +465,28 @@
 	.top .tel {
 		height: 60px;
 		line-height: 60px;
-		font-size: 18px;
+		font-size: 20px;
 		color: #099a10;
-		padding-left: 50px;
-		background: url(../images/tel_icon.png) left center no-repeat;
+		padding-left: 6%;
+		display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+		// background: url(../images/tel_icon.png) left center no-repeat;
+	}
+	.telImg{
+		width: 40px;
+		height: 40px;
+		margin-top: 5px;
+		margin-right: 15px;
 	}
 	.w1200 {
 		margin: -44px auto;
 		width: 1000px;
-		min-width: 65px;
+		min-width: 850px;
+		line-height: 10px;
 		height: auto;
-		overflow: hidden;
+		overflow: auto;
 	} 
 	//banner
 	.banner {

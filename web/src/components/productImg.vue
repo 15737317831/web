@@ -153,6 +153,7 @@
   }
   .content {
     min-height: 300px;
+    min-width: 900px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

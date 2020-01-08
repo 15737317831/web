@@ -10,16 +10,18 @@ export default new Router({
     {
       path: '/',
       redirect: 'index',
+      mode: 'hash',
     },
     {
       path : '/index',
-      component: Index
+      component: Index,
+      mode: 'hash',
     },
-    {
-      path: '/productInfo',
-      name: 'productInfo',
-      component: ProductInfo
-    }
+    // {
+    //   path: '/productInfo',
+    //   name: 'productInfo',
+    //   component: ProductInfo
+    // }
   ],
   mode:'history'
 })
