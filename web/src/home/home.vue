@@ -1,8 +1,8 @@
 <template>
   <div name='home'>
-    <el-carousel :interval="4000" type="card" loop>
-      <el-carousel-item v-for="item in imglist" >
-        <img class="img" :src='item.url' ></img>
+    <el-carousel :interval="4000" type="card" loop :height="imgHeight+'px'" >
+      <el-carousel-item v-for="item in imglist" class="imglist">
+        <img class="img" ref="image"  style="width:100%;" :src='item.url'></img>
       </el-carousel-item>
     </el-carousel>
     <Content @showProductInfo='showProductInfo' :productList='productList' :pageloading='pageloading'></Content>
@@ -25,6 +25,7 @@ import  Footer from '@/components/footer'
     data() {
       return {
         productList:[],
+        imgHeight:'',
         imglist:[
            {
             url:require("@/images/office.jpg"),
@@ -120,7 +121,12 @@ import  Footer from '@/components/footer'
         this.productList=this.$productRecommend
       }, 3000);
     },
-    mounted() {},
+    mounted() {
+       // 监听窗口变化，使得轮播图高度自适应图片高度
+      window.addEventListener("resize", () => {
+        this.imgHeight = this.$refs.image[0].height;
+      });
+    },
     watch: {},
     methods: {
       openInfo(e){
@@ -148,8 +154,13 @@ import  Footer from '@/components/footer'
   .el-carousel__item:nth-child(2n+1) {
    
   } */
+  .home .imglist{
+    overflow: hidden;
+  }
   .home .img{
-    height: 350px;
+    height: 300px !important;
+    width:100%; 
+    display:block;
   }
     /* 布局容器 */
   .el-footer {
