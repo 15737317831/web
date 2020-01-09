@@ -1,7 +1,7 @@
 import XLSX from 'xlsx'
 import transformSheets from '@/api/Excel.js'
 // 配置API接口地址
-var root = 'http://112.126.99.55:8080/'
+var root = 'http://112.126.99.55/'
 // 引用axios
 var axios = require('axios')
 // 自定义判断元素类型JS
