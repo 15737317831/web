@@ -15,8 +15,8 @@
             <h3>网站首页</h3>
             <p><a href="#">公司简介</a></p>
             <p><a href="#">领导致辞</a></p>
-            <p><a href="#">机构设置</a></p>
-            <p><a href="#">地理位置</a></p>
+            <p><a href="https://map.baidu.com/" target="_blank">机构设置</a></p>
+            <p><a href="https://map.baidu.com/" target="_blank">地理位置</a></p>
           </li>
           <li>
             <h3>荣誉资质</h3>
@@ -32,16 +32,15 @@
           <li>
             <h3>友情链接</h3>
             <div class="flink">
-              <div><a href="#"><span>网易</span></a></div>
-              <div><a href="#"><span>搜狐</span></a></div>
-              <div><a href="#"><span>网易</span></a></div>
-              <div><a href="#"><span>新浪</span></a></div>
-              <div><a href="#"><span>网易</span></a></div>
-              <div><a href="#"><span>搜狐</span></a></div>
-              <div><a href="#"><span>网易</span></a></div>
-              <div><a href="#"><span>中兴</span></a></div>
-              <div><a href="#"><span>腾讯</span></a></div>
-              <div><a href="#"><span>中兴</span></a></div>
+              <div><a href="https://www.163.com/" target="_blank"><span>网易</span></a></div>
+              <div><a href="http://www.sohu.com/" target="_blank"><span>搜狐</span></a></div>
+              <div><a href="https://www.sina.com.cn/" target="_blank"><span>新浪</span></a></div>
+
+   
+   
+              <div><a href="https://www.zte.com.cn/global/" target="_blank"><span>中兴</span></a></div>
+              <div><a href="https://www.qq.com/" target="_blank"><span>腾讯</span></a></div>
+
             </div>
           </li>
         </ul>
@@ -54,10 +53,10 @@
           <p>13631338039</p> -->
           <div class="weibo">
             <img src="../images/weibo.svg" alt="">
-            <a href="javascript:;">新浪微博</a></div>
+            <a href="https://www.sina.com.cn/" target="_blank">新浪微博</a></div>
           <div class="qq">
             <img src="../images/qq.svg" alt="">
-            <a href="javascript:;">腾讯微博</a></div>
+            <a href="http://t.qq.com/" target="_blank">腾讯微博</a></div>
         </div>
         <div class="r fr">
           <img class="erweima" src="../images/erweima.png" />

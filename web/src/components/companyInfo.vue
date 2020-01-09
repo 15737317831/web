@@ -72,7 +72,7 @@
         show: false,
         tableData: [{
           date: '公司名称：',
-          name: '郑州新普康药业有限公司',
+          name: '河南康普尔动物药业有限公司',
           address: '企业类型：',
           info: '私营企业'
         }, {

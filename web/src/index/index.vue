@@ -8,14 +8,14 @@
 					<ul class="fr">
 						<li class="wx">
 							<img class="wxImg" src="../images/wx_icon.png" alt="">
-							<div class="">官方微信</div>
+							<div class=""><a href="https://wx.qq.com/" target="_blank">官方微信</a></div>
 							<div class="wxerweima">
 								<img src="../images/erweima.png" />
 							</div>
 						</li>
 						<li class='wb'>
 								<img class="wbImg" src="../images/wb_icon.png" alt="">
-							<div class="">官方微博</div>
+							<div class=""><a href="http://weibo.com/" target="_blank">官方微博</a></div>
 						</li>
 					</ul>
 				</div>
@@ -530,4 +530,11 @@
 		width: 80px;
 		height: 80px;
 	}
+	.wb a, .wx a{
+		color: black
+	}
+	.wb a:hover,.wx a:hover{
+		color: #2e73d6
+	}
+	
 </style>
