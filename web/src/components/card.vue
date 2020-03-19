@@ -20,7 +20,7 @@
       <div v-if='period' class="text">{{period}}</div>
        <div v-if='text' class="text">{{text}}</div>
       <div v-show="contenttext.length!='0'" class="content" v-for="item in contenttext" :key='item'>
-        <img v-if='isimg' class="img" :src="imgsrc" alt="">
+        <img v-if='isimg' class="img" :src="imgsrc" :alt="imgsrc">
         <div class="text">{{item}}<span v-if='ismore' class='more' @click="moreinfo">更多>></span></div>
       </div>
     </el-card>

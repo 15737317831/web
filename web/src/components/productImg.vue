@@ -8,7 +8,7 @@
       </div>
       <ul ref='content' class="content" v-loading="loadingTab">
         <li class='item' v-for="item in imglistData" >
-          <img v-if='isimg' class="img" :src="item.url" alt="" @click="openInfo(item)">
+          <img v-if='isimg' class="img" :src="item.url" :alt="item.productName" @click="openInfo(item)">
           <div class="text">{{item.productName}}</div>
         </li>
       </ul>

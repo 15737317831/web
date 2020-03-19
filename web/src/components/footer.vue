@@ -2,7 +2,7 @@
   <!-- <div name='footer'>
         <p>郑州黄页网 | 郑州畜禽用药企业名录 |  产品展厅 | 最新供应 | 新闻资讯 | 产品地图 | 网站地图 | 免责声明 | 删除/修改信息| 投诉中心
   瘦瘦包多少钱   乌骨鸡苗   抓娃娃机厂家批发   无线模块厂家   LoRa模块   垃圾桶厂家   线性模组   进苏施工备案流程   进苏施工备案流程   梨树苗   VOCs在线监测   宁波厨房设备   门窗加工设备   上海到沈阳冷链物流   新加坡注册公司   排蓄水板   食用酒精   蔬菜大棚   格栅除污机   喷播机厂家   铸铁闸门厂家   红叶石楠价格   地黄种苗   交换机回收   mpp电力管   湿喷台车   兰州牛肉面加盟排行榜   防风抑尘网  
-  郑州新普康药业有限公司  技术支持： 搜了网 | 登录 | 免费注册</p>   
+  河南康普尔动物药业有限公司  技术支持： 搜了网 | 登录 | 免费注册</p>   
       </div> -->    
   <div class="footer">
     <div class="w1200">
@@ -52,10 +52,10 @@
           <!-- <h3 class="rx">24小时服务热线</h3>
           <p>13631338039</p> -->
           <div class="weibo">
-            <img src="../images/weibo.svg" alt="">
+            <img src="../images/weibo.svg" alt="微博">
             <a href="https://www.sina.com.cn/" target="_blank">新浪微博</a></div>
           <div class="qq">
-            <img src="../images/qq.svg" alt="">
+            <img src="../images/qq.svg" alt="qq">
             <a href="http://t.qq.com/" target="_blank">腾讯微博</a></div>
         </div>
         <div class="r fr">

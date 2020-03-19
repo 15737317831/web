@@ -5,7 +5,7 @@
         <span>{{productInfo.productName}}</span>
       </div>
       <div class="info">
-        <el-image class="img" :src="productInfo.url" alt="" fit="contain"></el-image>
+        <el-image class="img" :src="productInfo.url" :alt="productInfo.productName" fit="contain"></el-image>
           <p class="price">价格:<span class="red">{{productInfo.price}}</span></p>
           <el-row :gutter="20" class="flex">
           <el-col :xs="24" :span='8'><div class="col"><span class="fontSize">产品型号: </span>{{productInfo.model}} </div></el-col>

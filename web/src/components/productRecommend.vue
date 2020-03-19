@@ -12,7 +12,7 @@
           <el-row >
             <el-col :span="len-1" :offset="1" v-for="(item, index) in firstData" :key="index">
                <div class="desc">
-                 <img :src="item.url" alt=""  @click="openInfo(item)">
+                 <img :src="item.url" :alt="item.productName"  @click="openInfo(item)">
                  <div class='desctitle'> {{item.productName}}</div> </div>
             </el-col>
           </el-row>
@@ -24,7 +24,7 @@
             <el-col :span="len-1" :offset="1" v-for="(item, index) in lastData" :key="index">
                
                <div class="desc">
-                 <img :src="item.url" alt=""  @click="openInfo(item)">
+                 <img :src="item.url" :alt="item.productName"  @click="openInfo(item)">
                 <div class='desctitle'> {{item.productName}}</div> </div>
             </el-col>
             </el-row>

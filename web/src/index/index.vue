@@ -7,14 +7,14 @@
 					<div class="fl ">欢迎来到河南康普尔动物药业有限公司官网！</div>
 					<ul class="fr">
 						<li class="wx">
-							<img class="wxImg" src="../images/wx_icon.png" alt="">
+							<img class="wxImg" src="../images/wx_icon.png" alt="微信">
 							<div class=""><a href="https://wx.qq.com/" target="_blank">官方微信</a></div>
 							<div class="wxerweima">
 								<img src="../images/erweima.png" />
 							</div>
 						</li>
 						<li class='wb'>
-								<img class="wbImg" src="../images/wb_icon.png" alt="">
+								<img class="wbImg" src="../images/wb_icon.png" alt="微博">
 							<div class=""><a href="http://weibo.com/" target="_blank">官方微博</a></div>
 						</li>
 					</ul>
@@ -24,7 +24,7 @@
 				<div class="w1200">
 					<div class="logo fl">
 						<div>
-							<img class="logoimg" src="../images/logo.png" alt="" align="absbottom" />
+							<img class="logoimg" src="../images/logo.png" alt="logo" align="absbottom" />
 						</div>
 					</div>
 					<h1 class="fl lh">河南康普尔动物药业有限公司</h1>
@@ -35,7 +35,7 @@
 									</form>
 								</div> -->
 					<div class="tel fr">
-						<img class="telImg" src="../images/tel_icon.png" alt="" width="40px" height="40px">
+						<img class="telImg" src="../images/tel_icon.png" alt="tel" width="40px" height="40px">
 						0371-6531-1511
 					</div>
 				</div>
@@ -96,10 +96,10 @@
 						</div>
 					</transition>
 				</el-tab-pane>
-				<el-tab-pane label="公司相册" name="4" >
+				<!-- <el-tab-pane label="公司相册" name="4" >
 					<transition name="el-zoom-in-center">
 						<div v-show="activeName=='4'">
-						<!--公共banner-->
+	
 						<div class="banner">
 							<div class="banner_text">
 								<p class="zh">康普尔药业<br>一切为了养殖户</p>
@@ -107,7 +107,7 @@
 							</div>
 						</div>
 						<companyphoto :tabContent='tabContent' @showProductInfo='showProductInfo'></companyphoto>
-						<!-- 公共底部 -->
+			
 						<el-container>
 							<el-footer>
 								<Footer></Footer>
@@ -116,7 +116,7 @@
 						</el-container>
 							</div>
 					</transition>
-				</el-tab-pane>
+				</el-tab-pane> -->
 				<!-- <el-tab-pane label="产品视频" name="5" >
 					<transition name="el-zoom-in-center">
 						<div v-show="activeName=='5'">
@@ -157,10 +157,10 @@
 							</div>
 					</transition>
 				</el-tab-pane>
-				<el-tab-pane label="资质证书" name="7" >
+				<!-- <el-tab-pane label="资质证书" name="7" >
 					<transition name="el-zoom-in-center">
 						<div v-show="activeName=='7'">
-						<!--公共banner-->
+
 						<div class="banner">
 							<div class="banner_text">
 								<p class="zh">康普尔药业<br>一切为了养殖户</p>
@@ -168,7 +168,7 @@
 							</div>
 						</div>
 						<qualification :tabContent='tabContent' @showProductInfo='showProductInfo'></qualification>
-						<!-- 公共底部 -->
+	
 						<el-container>
 							<el-footer>
 								<Footer></Footer>
@@ -176,7 +176,7 @@
 						</el-container>
 							</div>
 					</transition>
-				</el-tab-pane>
+				</el-tab-pane> -->
 				<el-tab-pane label="新闻资讯" name="8" >
 					<transition name="el-zoom-in-center">
 						<div v-show="activeName=='8'">
