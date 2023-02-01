@@ -64,7 +64,7 @@
         </div>
       </div>
       <div class="copyright">
-        20010-20011&nbsp;版权所有&nbsp;2019 -2022&nbsp;&nbsp;备案号：豫ICP备20003273号-1
+         20010-20011&nbsp;版权所有&nbsp;2019 -2022&nbsp;&nbsp;<a href="https://beian.miit.gov.cn/" target="_blank">备案号：豫ICP备20003273号-1</a>
       </div>
     </div>
   </div>
