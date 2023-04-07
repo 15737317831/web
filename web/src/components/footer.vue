@@ -48,7 +48,7 @@
       <div class="right fr">
         <div class="l fl">
           <h3>工作热线</h3>
-          <div>0371-6531-1511</div>
+          <div>4008755568</div>
           <!-- <h3 class="rx">24小时服务热线</h3>
           <p>13631338039</p> -->
           <div class="weibo">

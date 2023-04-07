@@ -36,7 +36,7 @@
 								</div> -->
 					<div class="tel fr">
 						<img class="telImg" src="../images/tel_icon.png" alt="tel" width="40px" height="40px">
-						0371-6531-1511
+						4008755568
 					</div>
 				</div>
 			</div>

@@ -23,5 +23,5 @@ export default new Router({
     //   component: ProductInfo
     // }
   ],
-  mode:'history'
+  mode:'hash'
 })
